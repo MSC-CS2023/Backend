@@ -22,9 +22,9 @@ public class CustomerConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         // Set the path will be intercepted.
-        // Now the TokenInterceptor() will intercept all url ending with "/user/**"
+        // Now the getCustomerInterceptor() will intercept all url ending with "/customer/**"
         registry.addInterceptor(getCustomerInterceptor()).addPathPatterns("/customer/**");
         // If we need treat the interceptor as a Bean, the 'getLoginInterceptor()'
-        // can be changed as 'new TokenInterceptor()'
+        // can be changed as 'new getCustomerInterceptor()'
     }
 }

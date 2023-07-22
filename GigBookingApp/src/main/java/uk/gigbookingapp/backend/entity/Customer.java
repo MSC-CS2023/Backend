@@ -1,4 +1,4 @@
 package uk.gigbookingapp.backend.entity;
 
-public class Customer extends Userr{
+public class Customer extends User {
 }

@@ -8,6 +8,8 @@ import uk.gigbookingapp.backend.entity.User;
 
 import java.security.Key;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class JwtUtils {
 
@@ -25,19 +27,22 @@ public class JwtUtils {
 
     private JwtUtils(){}
 
-    public static String generateToken(User user){
+    public static String generateToken(User user, Integer type){
         Date now = new Date();
         Date expiration = new Date(now.getTime() + 86400 * 1000 * expire);
+        Map<String, Integer> map = new HashMap<>();
+        map.put("usertype", type);
         return Jwts.builder()
                 .setHeaderParam("type", "JWT")
-                .setSubject(user.getId())
+                .setClaims(map)
+                .setSubject(user.getId().toString())
                 .setIssuedAt(now)
                 .setExpiration(expiration)
                 .signWith(key)
                 .compact();
     }
 
-    public static Claims getClatimsByToken(String token){
+    public static Claims getClaimsByToken(String token){
         return Jwts.parserBuilder()
                 .setSigningKey(key)
                 .build()

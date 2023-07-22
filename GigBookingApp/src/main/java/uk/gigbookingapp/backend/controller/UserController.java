@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import uk.gigbookingapp.backend.entity.User;
-import uk.gigbookingapp.backend.mapper.UserMapper;
+import uk.gigbookingapp.backend.entity.Customer;
+import uk.gigbookingapp.backend.mapper.CustomerMapper;
 import uk.gigbookingapp.backend.utils.Result;
 
 import java.util.List;
@@ -15,11 +15,11 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    private UserMapper userMapper;
+    private CustomerMapper customerMapper;
 
     @GetMapping("/find")
     public Result getUserList(){
-        List<User> list = userMapper.selectList(null);
+        List<Customer> list = customerMapper.selectList(null);
         return Result.ok().data("userList", list);
     }
 

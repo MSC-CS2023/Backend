@@ -34,7 +34,4 @@ public class CustomerController {
         return Result.ok().data("user", customer);
     }
 
-
-
-
 }

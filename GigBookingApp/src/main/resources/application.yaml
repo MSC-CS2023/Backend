@@ -12,6 +12,9 @@ spring:
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # log format
+    #call-setters-on-nulls: true
+  mapper-locations: classpath*:uk/gigbookingapp/backend/xml/*.xml
+  #config-location: classpath:mybatis-config.xml
 
 logging:
   pattern:
