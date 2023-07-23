@@ -1,6 +1,10 @@
 package uk.gigbookingapp.backend.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 public abstract class User {
+    @JsonProperty("uid")
     private Integer id;
     private String username;
     private String email;

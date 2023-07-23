@@ -30,12 +30,12 @@ public class JwtUtils {
     public static String generateToken(User user, Integer type){
         Date now = new Date();
         Date expiration = new Date(now.getTime() + 86400 * 1000 * expire);
-        Map<String, Integer> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<>();
         map.put("usertype", type);
         return Jwts.builder()
                 .setHeaderParam("type", "JWT")
-                .setClaims(map)
                 .setSubject(user.getId().toString())
+                .addClaims(map)
                 .setIssuedAt(now)
                 .setExpiration(expiration)
                 .signWith(key)
@@ -43,6 +43,7 @@ public class JwtUtils {
     }
 
     public static Claims getClaimsByToken(String token){
+
         return Jwts.parserBuilder()
                 .setSigningKey(key)
                 .build()

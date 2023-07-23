@@ -1,6 +1,7 @@
 package uk.gigbookingapp.backend.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,7 +26,6 @@ public class CustomerController {
         this.currentId = currentId;
     }
 
-
     @GetMapping("/self_details")
     public Result getSelfDetails(){
         int id = currentId.getId();
@@ -34,4 +34,9 @@ public class CustomerController {
         return Result.ok().data("user", customer);
     }
 
+    @DeleteMapping("/delete_account")
+    public Result deleteAccount(){
+
+        return Result.ok();
+    }
 }

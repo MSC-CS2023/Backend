@@ -1,5 +1,9 @@
 package uk.gigbookingapp.backend.utils;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.servlet.http.HttpServletResponse;
+
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -66,4 +70,18 @@ public class Result {
         return r;
     }
 
+    public static boolean error(HttpServletResponse response) throws IOException {
+        response.setContentType("application/JSON");
+        ObjectMapper mapper = new ObjectMapper();
+        String json = mapper.writeValueAsString(Result.error());
+        response.getWriter().write(json);
+        return false;
+    }
+    public static boolean error(HttpServletResponse response, String message) throws IOException {
+        response.setContentType("application/JSON");
+        ObjectMapper mapper = new ObjectMapper();
+        String json = mapper.writeValueAsString(Result.error().setMessage(message));
+        response.getWriter().write(json);
+        return false;
+    }
 }

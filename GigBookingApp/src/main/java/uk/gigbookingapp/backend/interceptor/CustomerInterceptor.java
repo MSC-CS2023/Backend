@@ -10,6 +10,7 @@ import uk.gigbookingapp.backend.entity.CurrentId;
 import uk.gigbookingapp.backend.entity.UserType;
 import uk.gigbookingapp.backend.mapper.CustomerMapper;
 import uk.gigbookingapp.backend.utils.JwtUtils;
+import uk.gigbookingapp.backend.utils.Result;
 
 import java.util.Objects;
 
@@ -33,19 +34,22 @@ public class CustomerInterceptor implements HandlerInterceptor {
         try {
             claims = JwtUtils.getClaimsByToken(token);
         } catch (Exception e){
-            return false;
+            return Result.error(response, "Token is invalid.");
         }
 
         Double usertype = (Double) claims.get("usertype");
         if (usertype == null){
-            return false;
+            return Result.error(response, "No usertype in the token.");
         }
         if (usertype != (int) UserType.CUSTOMER){
-            return false;
+            return Result.error(response, "User type in the token is not customer.");
         }
         String uid = claims.getSubject();
+        if (uid == null){
+            return Result.error(response, "ID does not exist in the token.");
+        }
         if (mapper.selectById(uid) == null){
-            return false;
+            return Result.error(response, "Invalid ID.");
         }
         this.currentId.setId(Integer.parseInt(uid));
         System.out.println(currentId);
