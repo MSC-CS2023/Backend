@@ -8,19 +8,19 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.HandlerInterceptor;
 import uk.gigbookingapp.backend.entity.CurrentId;
 import uk.gigbookingapp.backend.entity.UserType;
-import uk.gigbookingapp.backend.mapper.CustomerMapper;
+import uk.gigbookingapp.backend.mapper.ServiceProviderMapper;
 import uk.gigbookingapp.backend.utils.JwtUtils;
 import uk.gigbookingapp.backend.utils.Result;
 
 @Configuration
-public class CustomerInterceptor implements HandlerInterceptor {
+public class ServerProviderInterceptor  implements HandlerInterceptor {
     @Autowired
-    private CustomerMapper mapper;
+    private ServiceProviderMapper mapper;
 
     private CurrentId currentId;
 
     @Autowired
-    public CustomerInterceptor(CurrentId currentId) {
+    public ServerProviderInterceptor(CurrentId currentId) {
         this.currentId = currentId;
     }
 
@@ -39,7 +39,7 @@ public class CustomerInterceptor implements HandlerInterceptor {
         if (usertype == null){
             return Result.error(response, "No usertype in the token.");
         }
-        if (usertype != (int) UserType.CUSTOMER){
+        if (usertype != (int) UserType.PROVIDER){
             return Result.error(response, "User type in the token is not customer.");
         }
         String uid = claims.getSubject();
@@ -50,7 +50,6 @@ public class CustomerInterceptor implements HandlerInterceptor {
             return Result.error(response, "Invalid ID.");
         }
         this.currentId.setId(Integer.parseInt(uid));
-        this.currentId.setUsertype(usertype.intValue());
 
         return true;
     }

@@ -1,11 +1,8 @@
 package uk.gigbookingapp.backend.entity;
 
-import org.springframework.context.annotation.Scope;
-import org.springframework.context.annotation.ScopedProxyMode;
-import org.springframework.stereotype.Component;
-
 public class CurrentId {
     private int id;
+    private int usertype;
 
     public void setId(int id){
         this.id = id;
@@ -13,5 +10,13 @@ public class CurrentId {
 
     public int getId(){
         return this.id;
+    }
+
+    public int getUsertype() {
+        return usertype;
+    }
+
+    public void setUsertype(int usertype) {
+        this.usertype = usertype;
     }
 }

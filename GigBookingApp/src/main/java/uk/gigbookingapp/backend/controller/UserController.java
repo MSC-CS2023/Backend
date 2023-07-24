@@ -1,82 +1,81 @@
 package uk.gigbookingapp.backend.controller;
 
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.core.mapper.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import uk.gigbookingapp.backend.entity.Customer;
+import org.springframework.web.bind.annotation.*;
+import uk.gigbookingapp.backend.entity.*;
 import uk.gigbookingapp.backend.mapper.CustomerMapper;
+import uk.gigbookingapp.backend.mapper.CustomerPasswordMapper;
+import uk.gigbookingapp.backend.mapper.ServiceProviderMapper;
+import uk.gigbookingapp.backend.mapper.ServiceProviderPasswordMapper;
 import uk.gigbookingapp.backend.utils.Result;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping({"/customer", "/service_provider"})
 public class UserController {
-
+    @Autowired
+    private CustomerPasswordMapper customerPasswordMapper;
     @Autowired
     private CustomerMapper customerMapper;
+    @Autowired
+    private ServiceProviderMapper providerMapper;
+    @Autowired
+    private ServiceProviderPasswordMapper providerPasswordMapper;
 
-    @GetMapping("/find")
-    public Result getUserList(){
-        List<Customer> list = customerMapper.selectList(null);
-        return Result.ok().data("userList", list);
+    private CurrentId currentId;
+    private BaseMapper userMapper;
+    private BaseMapper passwordMapper;
+    private int id;
+
+
+    @Autowired
+    UserController(CurrentId currentId) {
+        this.currentId = currentId;
     }
 
-//    @PostMapping("/add")
-//    public Result addUser(User user){
-//        int i = userMapper.insert(user);
-//        System.out.println(i);
-//        return "1";
-//    }
-//
-//    @GetMapping("/findId")
-//    public Result getUserById(String id){
-//        QueryWrapper<User> wrapper = new QueryWrapper<User>();
-//        wrapper.eq("id", id);
-//        System.out.println(userMapper.selectList(wrapper));
-//        return "1";
-//    }
-//
-//    @PutMapping("")
-//    public Result updateUser(){
-//        return "1";
-//    }
-//
-//    @DeleteMapping("/{id}")
-//    public Result deleteUserById(@PathVariable String id){
-//        return "1";
-//    }
-//
-//
-//    // A json string is needed.
-//    @PostMapping("/login")
-//    public Result login(User user){
-//
-//        String token = JwtUtils.generateToken(user);
-//        System.out.println(1111);
-//        //return Result.ok();
-//        return Result.ok().data("token", token);
-//    }
+    // Every request method in this class should begin with init()
+    private void init(){
+        this.id = this.currentId.getId();
+        this.userMapper = this.currentId.getUsertype() == UserType.CUSTOMER ? customerMapper : providerMapper;
+        this.passwordMapper = this.currentId.getUsertype() == UserType.CUSTOMER ? customerPasswordMapper : providerPasswordMapper;
+    }
 
-//    @PostMapping("/upload")
-//    public String uploadAvatar(String id, MultipartFile avatar, HttpServletRequest request) throws IOException{
-//        System.out.println(id);
-//        System.out.println(avatar.getContentType());
-//        System.out.println(avatar.getOriginalFilename());
-//        String path = request.getServletContext().getRealPath("upload");
-//        System.out.println("path: " + path);
-//        saveFile(avatar, path);
-//        return "{'statue': OK}";
-//    }
-//
-//    public void saveFile(MultipartFile avatar, String path) throws IOException{
-//        File dir = new File(path);
-//        if (!dir.exists()){
-//            if (!dir.mkdir()) throw new IOException("Can not make");
-//        }
-//
-//        File file = new File(path + avatar.getOriginalFilename());
-//        avatar.transferTo(file);
-//    }
+    @GetMapping("/self_details")
+    public Result getSelfDetails(){
+        init();
+        Customer customer = customerMapper.selectById(id);
+        return Result.ok().data("user", customer);
+    }
+
+    @DeleteMapping("/delete_account")
+    public Result deleteAccount(){;
+        init();
+        try {
+            passwordMapper.deleteById(id);
+        } catch (Exception ignored){}
+        try {
+            customerMapper.deleteById(id);
+        } catch (Exception ignored){}
+
+        return Result.ok();
+    }
+
+    @PostMapping("/modify_detail")
+    public Result modifyDetail(String key, String value){
+        init();
+        try {
+            UpdateWrapper<Customer> wrapper = new UpdateWrapper<>();
+            wrapper.eq("id", id).set(key, value);
+            customerMapper.update(null, wrapper);
+        } catch (Exception e){
+            return Result.error().setMessage("Invalid key");
+        }
+        return Result.ok();
+    }
+
+
 }

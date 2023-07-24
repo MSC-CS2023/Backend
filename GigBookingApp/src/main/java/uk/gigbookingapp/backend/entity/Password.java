@@ -1,8 +1,5 @@
 package uk.gigbookingapp.backend.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-
 public abstract class Password {
     private Integer id;
     private String password;
