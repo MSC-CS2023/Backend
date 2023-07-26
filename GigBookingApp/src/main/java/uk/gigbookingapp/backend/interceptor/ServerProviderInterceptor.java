@@ -13,7 +13,7 @@ import uk.gigbookingapp.backend.utils.JwtUtils;
 import uk.gigbookingapp.backend.utils.Result;
 
 @Configuration
-public class ServerProviderInterceptor  implements HandlerInterceptor {
+public class ServerProviderInterceptor implements HandlerInterceptor {
     @Autowired
     private ServiceProviderMapper mapper;
 
@@ -40,7 +40,7 @@ public class ServerProviderInterceptor  implements HandlerInterceptor {
             return Result.error(response, "No usertype in the token.");
         }
         if (usertype != (int) UserType.PROVIDER){
-            return Result.error(response, "User type in the token is not customer.");
+            return Result.error(response, "User type in the token is not provider.");
         }
         String uid = claims.getSubject();
         if (uid == null){

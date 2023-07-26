@@ -1,9 +1,13 @@
 package uk.gigbookingapp.backend.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public abstract class User {
     @JsonProperty("uid")
+    @TableId(type = IdType.NONE)
     private Integer id;
     private String username;
     private String email;

@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import uk.gigbookingapp.backend.entity.Customer;
 import uk.gigbookingapp.backend.entity.Password;
@@ -34,6 +35,7 @@ public class LoginController {
     private String password;
     private BaseMapper userMapper;
     private BaseMapper passwordMapper;
+    private int usertype;
 
     @GetMapping("/customer_login")
     public Result customerLogin(String email, String password){
@@ -41,6 +43,7 @@ public class LoginController {
         this.password = password;
         this.userMapper = customerMapper;
         this.passwordMapper = customerPasswordMapper;
+        this.usertype = UserType.CUSTOMER;
         return userLogin();
     }
 
@@ -50,10 +53,11 @@ public class LoginController {
         this.password = password;
         this.userMapper = providerMapper;
         this.passwordMapper = providerPasswordMapper;
+        this.usertype = UserType.PROVIDER;
         return userLogin();
     }
 
-    private Result userLogin(){
+    private Result userLogin() {
         if (email == null){
             return Result.error().setMessage("Email is null");
         }
@@ -73,9 +77,12 @@ public class LoginController {
         } else if (userPassword.getPassword().compareTo(password) != 0){
             return Result.error().setMessage("Password is wrong.");
         }
-        String token = JwtUtils.generateToken(user, UserType.CUSTOMER);
+        String token = JwtUtils.generateToken(user, usertype);
         Claims claims = JwtUtils.getClaimsByToken(token);
         String exp = String.valueOf(claims.getExpiration().getTime());
         return Result.ok().data("user", user).data("token", token).data("user", user).data("exp", exp);
     }
+
+
+
 }
