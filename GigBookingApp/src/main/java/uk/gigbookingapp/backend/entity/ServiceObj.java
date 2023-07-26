@@ -1,9 +1,10 @@
 package uk.gigbookingapp.backend.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.sql.Timestamp;
 
 //Springboot has had a class and an annotation called "Service".
 @TableName("service")
@@ -15,7 +16,11 @@ public class ServiceObj {
     private String description;
     private String detail;
     private Double fee;
+    @JsonProperty("provider_id")
     private Integer providerId;
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
+    private Timestamp timestamp;
 
     public Integer getId() {
         return id;
@@ -63,5 +68,13 @@ public class ServiceObj {
 
     public void setProviderId(Integer providerId) {
         this.providerId = providerId;
+    }
+
+    public Timestamp getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Timestamp timestamp) {
+        this.timestamp = timestamp;
     }
 }

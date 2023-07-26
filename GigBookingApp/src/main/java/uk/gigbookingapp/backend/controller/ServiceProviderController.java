@@ -36,51 +36,37 @@ public class ServiceProviderController {
     }
 
     @GetMapping("/get_services")
-    public Result getServices(Integer start, Integer num){
+    public Result getServices(
+            @RequestParam(required = false, defaultValue = "0") Integer start,
+            @RequestParam(required = false, defaultValue = "10") Integer num){
+        if (start < 0){
+            return Result.error().setMessage("Invalid value of 'start'.");
+        }
+        if (num < 0){
+            return Result.error().setMessage("Invalid value of 'num'.");
+        }
         int id = currentId.getId();
-
         QueryWrapper<ServiceObj> wrapper = new QueryWrapper<>();
-        wrapper.eq("provider_id", id);
+        wrapper.eq("provider_id", id)
+                .orderByDesc("timestamp")
+                .last("limit " + start + ", " + num);
         List<ServiceShort> list = ServiceShort.generateList(serviceMapper.selectList(wrapper));
-        System.out.println(id);
 
-        int len = list.size();
-
-        if (start == null) {
-            start = 0;
-        } else if (start >= len){
-            return Result.ok().
-                    data("services", new ArrayList<>()).
-                    setMessage("No new services.");
-        }
-        if (num == null || start + num >= len){
-            list = list.subList(start, len);
-        } else {
-            list = list.subList(start, start + num);
-        }
-
-        return Result.ok().data("short_services", list);
+        return Result.ok().data("services", list);
     }
 
     @PutMapping("/add_service")
-    public Result addService(String title, String description, String detail, Double fee){
+    public Result addService(
+            @RequestParam String title,
+            @RequestParam String description,
+            @RequestParam(required = false, defaultValue = "") String detail,
+            @RequestParam Double fee){
         int id = currentId.getId();
         ServiceObj serviceObj = new ServiceObj();
-        if (title == null) {
-            return Result.error().setMessage("Title is null.");
-        } else {
-            serviceObj.setTitle(title);
-        }
-        if (description == null) {
-            return Result.error().setMessage("Description is null.");
-        } else {
-            serviceObj.setDescription(description);
-        }
-        if (fee == null) {
-            return Result.error().setMessage("Fee is null.");
-        } else {
-            serviceObj.setFee(fee);
-        }
+
+        serviceObj.setTitle(title);
+        serviceObj.setDescription(description);
+        serviceObj.setFee(fee);
         serviceObj.setDetail(detail);
         serviceObj.setProviderId(id);
         serviceMapper.insert(serviceObj);
@@ -88,11 +74,11 @@ public class ServiceProviderController {
     }
 
     @PostMapping("/service/modify")
-    public Result modifyService(@RequestParam("service_id") Integer serviceId, String key, String value){
+    public Result modifyService(
+            @RequestParam("service_id") Integer serviceId,
+            @RequestParam String key,
+            @RequestParam String value){
         int id = currentId.getId();
-        if (serviceId == null) { return Result.error().setMessage("Service id is null."); }
-        if (key == null) { return Result.error().setMessage("Key is null."); }
-        if (value == null) { return Result.error().setMessage("Value is null."); }
 
         QueryWrapper<ServiceObj> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("id", serviceId)
@@ -118,7 +104,6 @@ public class ServiceProviderController {
 
     @DeleteMapping("/service/delete")
     public Result deleteService(@RequestParam("service_id") Integer serviceId){
-        if (serviceId == null) { return Result.error().setMessage("Service id is null."); }
         int id = currentId.getId();
         try {
             QueryWrapper<ServiceObj> queryWrapper = new QueryWrapper<>();

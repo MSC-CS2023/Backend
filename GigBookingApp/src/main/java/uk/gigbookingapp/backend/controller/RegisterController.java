@@ -4,15 +4,15 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import uk.gigbookingapp.backend.entity.*;
 import uk.gigbookingapp.backend.mapper.CustomerMapper;
 import uk.gigbookingapp.backend.mapper.CustomerPasswordMapper;
 import uk.gigbookingapp.backend.mapper.ServiceProviderMapper;
 import uk.gigbookingapp.backend.mapper.ServiceProviderPasswordMapper;
+import uk.gigbookingapp.backend.type.UserType;
 import uk.gigbookingapp.backend.utils.JwtUtils;
 import uk.gigbookingapp.backend.utils.Result;
 
@@ -34,7 +34,12 @@ public class RegisterController {
     private int usertype;
 
     @PutMapping("/customer_register")
-    public Result customerRegister(String email, String username, String password, String address, String tel){
+    public Result customerRegister(
+            @RequestParam String email,
+            @RequestParam String username,
+            @RequestParam String password,
+            @RequestParam(required = false, defaultValue = "") String address,
+            @RequestParam(required = false, defaultValue = "") String tel){
         this.user = new Customer();
         this.userPassword = new CustomerPassword();
         init(email, username, password, address, tel);
@@ -45,7 +50,12 @@ public class RegisterController {
     }
 
     @PutMapping("/service_provider_register")
-    public Result serviceRegister(String email, String username, String password, String address, String tel){
+    public Result serviceRegister(
+            @RequestParam String email,
+            @RequestParam String username,
+            @RequestParam String password,
+            @RequestParam(required = false, defaultValue = "") String address,
+            @RequestParam(required = false, defaultValue = "") String tel){
         this.user = new ServiceProvider();
         this.userPassword = new ServiceProviderPassword();
         init(email, username, password, address, tel);
@@ -64,13 +74,13 @@ public class RegisterController {
     }
 
     private Result userRegister() {
-        if (user.getEmail() == null){
-            return Result.error().setMessage("Email is null");
+        if (user.getEmail().isEmpty()){
+            return Result.error().setMessage("Email is empty");
         }
-        if (user.getUsername() == null){
+        if (user.getUsername().isEmpty()){
             return Result.error().setMessage("Username is null");
         }
-        if (userPassword.getPassword() == null){
+        if (userPassword.getPassword().isEmpty()){
             return Result.error().setMessage("Password is null");
         }
         QueryWrapper<Customer> wrapper = new QueryWrapper<>();

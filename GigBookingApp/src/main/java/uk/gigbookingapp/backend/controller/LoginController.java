@@ -5,20 +5,18 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import uk.gigbookingapp.backend.entity.Customer;
 import uk.gigbookingapp.backend.entity.Password;
 import uk.gigbookingapp.backend.entity.User;
-import uk.gigbookingapp.backend.entity.UserType;
+import uk.gigbookingapp.backend.type.UserType;
 import uk.gigbookingapp.backend.mapper.CustomerMapper;
 import uk.gigbookingapp.backend.mapper.CustomerPasswordMapper;
 import uk.gigbookingapp.backend.mapper.ServiceProviderMapper;
 import uk.gigbookingapp.backend.mapper.ServiceProviderPasswordMapper;
 import uk.gigbookingapp.backend.utils.JwtUtils;
 import uk.gigbookingapp.backend.utils.Result;
-
-import java.util.Date;
 
 @RestController
 public class LoginController {
@@ -38,7 +36,9 @@ public class LoginController {
     private int usertype;
 
     @GetMapping("/customer_login")
-    public Result customerLogin(String email, String password){
+    public Result customerLogin(
+            @RequestParam String email,
+            @RequestParam String password){
         this.email = email;
         this.password = password;
         this.userMapper = customerMapper;
@@ -48,7 +48,9 @@ public class LoginController {
     }
 
     @GetMapping("/service_provider_login")
-    public Result serviceProviderLogin(String email, String password){
+    public Result serviceProviderLogin(
+            @RequestParam String email,
+            @RequestParam String password){
         this.email = email;
         this.password = password;
         this.userMapper = providerMapper;
@@ -58,12 +60,6 @@ public class LoginController {
     }
 
     private Result userLogin() {
-        if (email == null){
-            return Result.error().setMessage("Email is null");
-        }
-        if (password == null){
-            return Result.error().setMessage("Password is null");
-        }
         QueryWrapper<Customer> wrapper = new QueryWrapper<>();
         wrapper.eq("email", email);
         User user = (User) userMapper.selectOne(wrapper);

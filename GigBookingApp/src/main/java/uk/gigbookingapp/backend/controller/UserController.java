@@ -3,15 +3,12 @@ package uk.gigbookingapp.backend.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.baomidou.mybatisplus.core.mapper.Mapper;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import uk.gigbookingapp.backend.entity.*;
 import uk.gigbookingapp.backend.mapper.*;
+import uk.gigbookingapp.backend.type.UserType;
 import uk.gigbookingapp.backend.utils.Result;
-
-import java.util.List;
 
 @RestController
 @RequestMapping({"/customer", "/service_provider"})
@@ -73,10 +70,10 @@ public class UserController {
     }
 
     @PostMapping("/modify_detail")
-    public Result modifyDetail(String key, String value){
+    public Result modifyDetail(
+            @RequestParam String key,
+            @RequestParam String value){
         init();
-        if (key == null) return Result.error().setMessage("Key is null");
-        if (value == null) return Result.error().setMessage("Value is null");
         try {
             UpdateWrapper<Customer> wrapper = new UpdateWrapper<>();
             wrapper.eq("id", id).set(key, value);
@@ -88,10 +85,10 @@ public class UserController {
     }
 
     @PostMapping("/reset_password")
-    public Result resetPassword(@RequestParam("old_value") String oldValue, @RequestParam("new_value") String newValue){
+    public Result resetPassword(
+            @RequestParam("old_value") String oldValue,
+            @RequestParam("new_value") String newValue){
         init();
-        if (oldValue == null) return Result.error().setMessage("Old value is null.");
-        if (newValue == null) return Result.error().setMessage("New value is null.");
         if (newValue.equals(oldValue)) return Result.error().setMessage("New value is same to the old one.");
         Password password = (Password) passwordMapper.selectById(id);
         if (!password.getPassword().equals(oldValue)){
