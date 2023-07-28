@@ -3,12 +3,23 @@ package uk.gigbookingapp.backend.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import jakarta.servlet.ServletOutputStream;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import uk.gigbookingapp.backend.entity.*;
 import uk.gigbookingapp.backend.mapper.*;
 import uk.gigbookingapp.backend.type.UserType;
 import uk.gigbookingapp.backend.utils.Result;
+
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.IOException;
+import java.net.URLEncoder;
 
 @RestController
 @RequestMapping({"/customer", "/service_provider"})
@@ -27,7 +38,12 @@ public class UserController {
     private CurrentId currentId;
     private BaseMapper userMapper;
     private BaseMapper passwordMapper;
-    private int id;
+    private long id;
+    private User user;
+    private String avatarPath;
+
+    private static final String customerAvatarPath = "/upload/avatar/customer/";
+    private static final String providerAvatarPath = "/upload/avatar/provider/";
 
 
     @Autowired
@@ -38,8 +54,16 @@ public class UserController {
     // Every request method in this class should begin with init()
     private void init(){
         this.id = this.currentId.getId();
-        this.userMapper = this.currentId.getUsertype() == UserType.CUSTOMER ? customerMapper : providerMapper;
-        this.passwordMapper = this.currentId.getUsertype() == UserType.CUSTOMER ? customerPasswordMapper : providerPasswordMapper;
+        if (currentId.getUsertype() == UserType.CUSTOMER){
+            userMapper = customerMapper;
+            passwordMapper = customerPasswordMapper;
+            avatarPath = customerAvatarPath;
+        } else {
+            userMapper = customerMapper;
+            passwordMapper = providerPasswordMapper;
+            avatarPath = providerAvatarPath;
+        }
+        this.user = (User) userMapper.selectById(id);
     }
 
     @GetMapping("/self_details")
@@ -99,9 +123,52 @@ public class UserController {
         return Result.ok();
     }
 
+    @PostMapping("/update_avatar")
+    public Result updateAvatar(
+            @RequestParam MultipartFile avatar,
+            HttpServletRequest request){
+        init();
+        deleteUserAvatar(request);
+        String path = request.getServletContext().getRealPath(avatarPath);
+        String filename = id + "." +
+                FilenameUtils.getExtension(avatar.getOriginalFilename());
+        try {
+            saveAvatar(avatar, path, filename);
+        } catch (Exception e) {
+            return Result.error().setMessage("Save file error.");
+        }
 
+        UpdateWrapper<User> wrapper = new UpdateWrapper<>();
+        wrapper.eq("id", id)
+                .set("avatar_path", avatarPath + filename);
+        userMapper.update(null, wrapper);
+        return Result.ok();
+    }
 
+    public void saveAvatar(MultipartFile avatar, String path, String filename) throws Exception{
+        File dir = new File(path);
+        if (!dir.exists()){
+            if(!dir.mkdirs()){
+                throw new IOException();
+            }
+        }
+        String filePath = path + filename;
+        File file = new File(filePath);
+        avatar.transferTo(file);
+    }
 
+    public void deleteUserAvatar(HttpServletRequest request) {
+        String path = request.getServletContext().getRealPath(user.getAvatarPath());
+        File file = new File(path);
+        if (file.exists()){
+            file.delete();
+        }
+    }
 
+    @GetMapping("get_avatar")
+    public void getAvatar(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        init();
+        PublicUserController.sendAvatar(request, response, user, userMapper);
+    }
 
 }

@@ -1,14 +1,14 @@
 package uk.gigbookingapp.backend.entity;
 
 public class CurrentId {
-    private int id;
+    private Long id;
     private int usertype;
 
-    public void setId(int id){
+    public void setId(Long id){
         this.id = id;
     }
 
-    public int getId(){
+    public Long getId(){
         return this.id;
     }
 

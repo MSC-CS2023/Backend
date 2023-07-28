@@ -8,6 +8,11 @@ spring:
     username: root
     password: 123456
 
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 2MB
+
 
 mybatis-plus:
   configuration:
@@ -19,5 +24,11 @@ mybatis-plus:
 logging:
   pattern:
     dateformat: dd-MM-yyyy' 'HH:mm:ss.SSS' 'XXX
+  file:
+    path: ./target/log
+  logback:
+    rollingpolicy:
+      file-name-pattern: ${LOG_FILE}.%d{dd-MM-yyyy}.%i.gz
+      max-file-size: 1MB
 
 

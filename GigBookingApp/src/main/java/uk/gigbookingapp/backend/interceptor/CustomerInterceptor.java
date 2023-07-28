@@ -49,7 +49,7 @@ public class CustomerInterceptor implements HandlerInterceptor {
         if (mapper.selectById(uid) == null){
             return Result.error(response, "Invalid ID.");
         }
-        this.currentId.setId(Integer.parseInt(uid));
+        this.currentId.setId(Long.parseLong(uid));
         this.currentId.setUsertype(usertype.intValue());
 
         return true;

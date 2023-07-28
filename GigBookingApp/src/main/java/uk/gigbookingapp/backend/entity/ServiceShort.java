@@ -8,17 +8,17 @@ import java.util.List;
 
 public class ServiceShort {
     @JsonProperty("uid")
-    private Integer id;
+    private Long id;
     private String title;
     private Double fee;
     @JsonProperty("provider_id")
-    private Integer providerId;
+    private Long providerId;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -38,11 +38,11 @@ public class ServiceShort {
         this.fee = fee;
     }
 
-    public Integer getProviderId() {
+    public Long getProviderId() {
         return providerId;
     }
 
-    public void setProviderId(Integer providerId) {
+    public void setProviderId(Long providerId) {
         this.providerId = providerId;
     }
 

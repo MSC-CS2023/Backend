@@ -11,22 +11,22 @@ import java.sql.Timestamp;
 public class ServiceObj {
     @JsonProperty("uid")
     @TableId(type = IdType.NONE)
-    private Integer id;
+    private Long id;
     private String title;
     private String description;
     private String detail;
     private Double fee;
     @JsonProperty("provider_id")
-    private Integer providerId;
+    private Long providerId;
     @TableField(fill = FieldFill.INSERT_UPDATE)
     @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
     private Timestamp timestamp;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -62,11 +62,11 @@ public class ServiceObj {
         this.fee = fee;
     }
 
-    public Integer getProviderId() {
+    public Long getProviderId() {
         return providerId;
     }
 
-    public void setProviderId(Integer providerId) {
+    public void setProviderId(Long providerId) {
         this.providerId = providerId;
     }
 

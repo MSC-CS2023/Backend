@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import uk.gigbookingapp.backend.entity.Customer;
@@ -35,7 +36,7 @@ public class LoginController {
     private BaseMapper passwordMapper;
     private int usertype;
 
-    @GetMapping("/customer_login")
+    @PostMapping("/customer_login")
     public Result customerLogin(
             @RequestParam String email,
             @RequestParam String password){
@@ -47,7 +48,7 @@ public class LoginController {
         return userLogin();
     }
 
-    @GetMapping("/service_provider_login")
+    @PostMapping("/service_provider_login")
     public Result serviceProviderLogin(
             @RequestParam String email,
             @RequestParam String password){
@@ -66,7 +67,7 @@ public class LoginController {
         if (user == null){
             return Result.error().setMessage("Email cannot be found.");
         }
-        Integer id = user.getId();
+        Long id = user.getId();
         Password userPassword = (Password) passwordMapper.selectById(id);
         if (userPassword == null) {
             return Result.error().setMessage("No password data.");

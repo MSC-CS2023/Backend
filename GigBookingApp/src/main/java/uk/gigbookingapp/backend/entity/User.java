@@ -8,17 +8,19 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public abstract class User {
     @JsonProperty("uid")
     @TableId(type = IdType.NONE)
-    private Integer id;
+    private Long id;
     private String username;
     private String email;
     private String address;
     private String tel;
 
-    public Integer getId() {
+    private String avatarPath;
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -54,4 +56,11 @@ public abstract class User {
         this.tel = tel;
     }
 
+    public String getAvatarPath() {
+        return avatarPath;
+    }
+
+    public void setAvatarPath(String avatarPath) {
+        this.avatarPath = avatarPath;
+    }
 }

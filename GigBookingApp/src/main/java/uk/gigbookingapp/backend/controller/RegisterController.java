@@ -89,7 +89,7 @@ public class RegisterController {
             return Result.error().setMessage("The email has existed.");
         }
         userMapper.insert(user);
-        int id = user.getId();
+        long id = user.getId();
         userPassword.setId(id);
         passwordMapper.insert(userPassword);
 

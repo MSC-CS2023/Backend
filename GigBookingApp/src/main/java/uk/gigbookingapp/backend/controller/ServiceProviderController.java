@@ -45,7 +45,7 @@ public class ServiceProviderController {
         if (num < 0){
             return Result.error().setMessage("Invalid value of 'num'.");
         }
-        int id = currentId.getId();
+        long id = currentId.getId();
         QueryWrapper<ServiceObj> wrapper = new QueryWrapper<>();
         wrapper.eq("provider_id", id)
                 .orderByDesc("timestamp")
@@ -61,7 +61,7 @@ public class ServiceProviderController {
             @RequestParam String description,
             @RequestParam(required = false, defaultValue = "") String detail,
             @RequestParam Double fee){
-        int id = currentId.getId();
+        long id = currentId.getId();
         ServiceObj serviceObj = new ServiceObj();
 
         serviceObj.setTitle(title);
@@ -78,7 +78,7 @@ public class ServiceProviderController {
             @RequestParam("service_id") Integer serviceId,
             @RequestParam String key,
             @RequestParam String value){
-        int id = currentId.getId();
+        long id = currentId.getId();
 
         QueryWrapper<ServiceObj> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("id", serviceId)
@@ -104,7 +104,7 @@ public class ServiceProviderController {
 
     @DeleteMapping("/service/delete")
     public Result deleteService(@RequestParam("service_id") Integer serviceId){
-        int id = currentId.getId();
+        long id = currentId.getId();
         try {
             QueryWrapper<ServiceObj> queryWrapper = new QueryWrapper<>();
             queryWrapper.eq("id", serviceId)
