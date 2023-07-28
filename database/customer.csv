@@ -1,3 +1,4 @@
-"id","username","email","address","tel"
-"11","alice","123@123.com",,
-"12","bob","456@456.com",,
+"id","username","email","address","tel","avatar_path"
+"11","alice","123@gmail.com","","1231231234",""
+"12","bob","456@gmail.com","","",""
+"654340098","alice","123alice@gmail.com","Room404, Not Found Rd, London","1234567890",""
