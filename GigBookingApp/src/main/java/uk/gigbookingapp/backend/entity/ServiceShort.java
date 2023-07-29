@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ServiceShort {
-    @JsonProperty("uid")
+
     private Long id;
     private String title;
     private Double fee;
