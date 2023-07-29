@@ -2,6 +2,7 @@ package uk.gigbookingapp.backend.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.sql.Timestamp;
@@ -20,7 +21,11 @@ public class ServiceObj {
     private Long providerId;
     @TableField(fill = FieldFill.INSERT_UPDATE)
     @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
+    @JsonIgnore
     private Timestamp timestamp;
+
+    @JsonProperty("timestamp")
+    private Long timestampLong;
 
     public Long getId() {
         return id;
@@ -76,5 +81,14 @@ public class ServiceObj {
 
     public void setTimestamp(Timestamp timestamp) {
         this.timestamp = timestamp;
+        setTimestampLong();
+    }
+
+    public Long getTimestampLong() {
+        return this.timestampLong;
+    }
+
+    public void setTimestampLong() {
+        this.timestampLong = timestamp.getTime();
     }
 }
