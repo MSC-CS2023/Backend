@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public abstract class User {
-    @JsonProperty("uid")
+
     @TableId(type = IdType.NONE)
     private Long id;
     private String username;

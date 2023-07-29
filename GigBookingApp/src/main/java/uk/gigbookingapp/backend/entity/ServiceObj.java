@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 //Springboot has had a class and an annotation called "Service".
 @TableName("service")
 public class ServiceObj {
-    @JsonProperty("uid")
+
     @TableId(type = IdType.NONE)
     private Long id;
     private String title;
