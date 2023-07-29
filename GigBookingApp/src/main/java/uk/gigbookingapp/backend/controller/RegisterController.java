@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -42,7 +44,9 @@ public class RegisterController {
             @RequestParam(required = false, defaultValue = "") String tel){
         this.user = new Customer();
         this.userPassword = new CustomerPassword();
-        init(email, username, password, address, tel);
+        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String encodedPassword = passwordEncoder.encode(password);
+        init(email, username, encodedPassword, address, tel);
         this.userMapper = customerMapper;
         this.passwordMapper = customerPasswordMapper;
         this.usertype = UserType.CUSTOMER;
@@ -58,7 +62,9 @@ public class RegisterController {
             @RequestParam(required = false, defaultValue = "") String tel){
         this.user = new ServiceProvider();
         this.userPassword = new ServiceProviderPassword();
-        init(email, username, password, address, tel);
+        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String encodedPassword = passwordEncoder.encode(password);
+        init(email, username, encodedPassword, address, tel);
         this.userMapper = providerMapper;
         this.passwordMapper = providerPasswordMapper;
         this.usertype = UserType.PROVIDER;

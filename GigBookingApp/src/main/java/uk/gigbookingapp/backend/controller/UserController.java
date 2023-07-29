@@ -9,13 +9,19 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import uk.gigbookingapp.backend.entity.*;
 import uk.gigbookingapp.backend.mapper.*;
 import uk.gigbookingapp.backend.type.UserType;
 import uk.gigbookingapp.backend.utils.Result;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
@@ -34,7 +40,6 @@ public class UserController {
     private ServiceProviderPasswordMapper providerPasswordMapper;
     @Autowired
     private ServiceMapper serviceMapper;
-
     private CurrentId currentId;
     private BaseMapper userMapper;
     private BaseMapper passwordMapper;
@@ -59,7 +64,7 @@ public class UserController {
             passwordMapper = customerPasswordMapper;
             avatarPath = customerAvatarPath;
         } else {
-            userMapper = customerMapper;
+            userMapper = providerMapper;
             passwordMapper = providerPasswordMapper;
             avatarPath = providerAvatarPath;
         }

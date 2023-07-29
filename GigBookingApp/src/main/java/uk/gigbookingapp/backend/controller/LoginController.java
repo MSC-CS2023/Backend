@@ -52,6 +52,7 @@ public class LoginController {
     public Result serviceProviderLogin(
             @RequestParam String email,
             @RequestParam String password){
+
         this.email = email;
         this.password = password;
         this.userMapper = providerMapper;
