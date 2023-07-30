@@ -25,6 +25,7 @@ public class ServiceObj {
     private Timestamp timestamp;
 
     @JsonProperty("timestamp")
+    @TableField(exist = false)
     private Long timestampLong;
 
     public Long getId() {
