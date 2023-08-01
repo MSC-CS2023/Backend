@@ -3,7 +3,6 @@ package uk.gigbookingapp.backend.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import uk.gigbookingapp.backend.entity.ServiceObj;
@@ -73,6 +72,15 @@ public class SearchingController {
         List<ServiceObj> list = serviceMapper.selectList(wrapper);
         LinkedList<ServiceShort> linkedList = ServiceShort.generateList(list);
         return Result.ok().data("services", linkedList);
+    }
+
+    @GetMapping("get_service")
+    public Result getService(@RequestParam Long id){
+        ServiceObj serviceObj = serviceMapper.selectById(id);
+        if (serviceObj == null) {
+            return Result.error().setMessage("Invalid id.");
+        }
+        return Result.ok().data("service", serviceObj);
     }
 
 }

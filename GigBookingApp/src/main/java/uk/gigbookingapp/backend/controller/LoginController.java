@@ -3,21 +3,23 @@ package uk.gigbookingapp.backend.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import io.jsonwebtoken.Claims;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import uk.gigbookingapp.backend.entity.Customer;
 import uk.gigbookingapp.backend.entity.Password;
 import uk.gigbookingapp.backend.entity.User;
-import uk.gigbookingapp.backend.type.UserType;
 import uk.gigbookingapp.backend.mapper.CustomerMapper;
 import uk.gigbookingapp.backend.mapper.CustomerPasswordMapper;
 import uk.gigbookingapp.backend.mapper.ServiceProviderMapper;
 import uk.gigbookingapp.backend.mapper.ServiceProviderPasswordMapper;
+import uk.gigbookingapp.backend.type.UserType;
 import uk.gigbookingapp.backend.utils.JwtUtils;
 import uk.gigbookingapp.backend.utils.Result;
+
+import java.util.Arrays;
 
 @RestController
 public class LoginController {
@@ -36,10 +38,14 @@ public class LoginController {
     private BaseMapper passwordMapper;
     private int usertype;
 
+
     @PostMapping("/customer_login")
     public Result customerLogin(
             @RequestParam String email,
-            @RequestParam String password){
+            @RequestParam String password,
+            HttpServletRequest request){
+        System.out.println();
+        System.out.println(Arrays.toString(request.getParameterValues("email")));
         this.email = email;
         this.password = password;
         this.userMapper = customerMapper;
@@ -52,7 +58,6 @@ public class LoginController {
     public Result serviceProviderLogin(
             @RequestParam String email,
             @RequestParam String password){
-
         this.email = email;
         this.password = password;
         this.userMapper = providerMapper;
@@ -65,6 +70,7 @@ public class LoginController {
         QueryWrapper<Customer> wrapper = new QueryWrapper<>();
         wrapper.eq("email", email);
         User user = (User) userMapper.selectOne(wrapper);
+
         if (user == null){
             return Result.error().setMessage("Email cannot be found.");
         }
@@ -77,7 +83,7 @@ public class LoginController {
         }
         String token = JwtUtils.generateToken(user, usertype);
         Claims claims = JwtUtils.getClaimsByToken(token);
-        String exp = String.valueOf(claims.getExpiration().getTime());
+        Long exp = claims.getExpiration().getTime();
         return Result.ok().data("user", user).data("token", token).data("user", user).data("exp", exp);
     }
 

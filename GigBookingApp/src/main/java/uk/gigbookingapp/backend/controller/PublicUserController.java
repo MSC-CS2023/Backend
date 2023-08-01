@@ -13,9 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import uk.gigbookingapp.backend.entity.CurrentId;
 import uk.gigbookingapp.backend.entity.User;
-import uk.gigbookingapp.backend.mapper.*;
+import uk.gigbookingapp.backend.mapper.CustomerMapper;
+import uk.gigbookingapp.backend.mapper.ServiceMapper;
+import uk.gigbookingapp.backend.mapper.ServiceProviderMapper;
 import uk.gigbookingapp.backend.type.UserType;
-import uk.gigbookingapp.backend.utils.Result;
 
 import java.io.File;
 import java.io.IOException;
@@ -48,7 +49,7 @@ public class PublicUserController {
 
     @GetMapping("/avatar")
     public void getAvatar(
-            @RequestParam Integer id,
+            @RequestParam Long id,
             HttpServletRequest request,
             HttpServletResponse response) throws IOException {
         init();

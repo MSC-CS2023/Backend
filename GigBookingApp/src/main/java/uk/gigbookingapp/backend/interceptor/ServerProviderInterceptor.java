@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.HandlerInterceptor;
 import uk.gigbookingapp.backend.entity.CurrentId;
-import uk.gigbookingapp.backend.type.UserType;
 import uk.gigbookingapp.backend.mapper.ServiceProviderMapper;
+import uk.gigbookingapp.backend.type.UserType;
 import uk.gigbookingapp.backend.utils.JwtUtils;
 import uk.gigbookingapp.backend.utils.Result;
 

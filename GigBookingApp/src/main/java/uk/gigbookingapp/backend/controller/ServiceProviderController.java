@@ -1,21 +1,17 @@
 package uk.gigbookingapp.backend.controller;
 
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import uk.gigbookingapp.backend.entity.CurrentId;
 import uk.gigbookingapp.backend.entity.ServiceObj;
-import uk.gigbookingapp.backend.entity.ServiceProvider;
 import uk.gigbookingapp.backend.entity.ServiceShort;
 import uk.gigbookingapp.backend.mapper.ServiceMapper;
 import uk.gigbookingapp.backend.mapper.ServiceProviderMapper;
 import uk.gigbookingapp.backend.mapper.ServiceProviderPasswordMapper;
 import uk.gigbookingapp.backend.utils.Result;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 @RestController
