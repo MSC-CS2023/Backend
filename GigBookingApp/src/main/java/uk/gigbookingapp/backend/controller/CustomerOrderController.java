@@ -125,6 +125,9 @@ public class CustomerOrderController {
         if (order == null || !Objects.equals(order.getCustomerId(), currentId.getId())){
             return Result.error().setMessage("The order with the given id does not belong to the user.");
         }
+        if (!order.getIsFinished()){
+            return Result.error().setMessage("The order is not finished.");
+        }
         order.setMark(mark);
         orderMapper.updateById(order);
         return Result.ok().data("booking_order", orderMapper.selectById(id));

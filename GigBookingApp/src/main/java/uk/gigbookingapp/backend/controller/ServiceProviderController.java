@@ -31,7 +31,7 @@ public class ServiceProviderController {
         this.currentId = currentId;
     }
 
-    @GetMapping("/get_services")
+    @GetMapping("/services/get")
     public Result getServices(
             @RequestParam(required = false, defaultValue = "0") Integer start,
             @RequestParam(required = false, defaultValue = "10") Integer num){
@@ -51,7 +51,7 @@ public class ServiceProviderController {
         return Result.ok().data("services", list);
     }
 
-    @PutMapping("/add_service")
+    @PutMapping("/service/add")
     public Result addService(
             @RequestParam String title,
             @RequestParam String description,
@@ -71,7 +71,7 @@ public class ServiceProviderController {
 
     @PostMapping("/service/modify")
     public Result modifyService(
-            @RequestParam("service_id") Integer serviceId,
+            @RequestParam("service_id") Long serviceId,
             @RequestParam String key,
             @RequestParam String value){
         long id = currentId.getId();
@@ -99,7 +99,7 @@ public class ServiceProviderController {
     }
 
     @DeleteMapping("/service/delete")
-    public Result deleteService(@RequestParam("service_id") Integer serviceId){
+    public Result deleteService(@RequestParam("service_id") Long serviceId){
         long id = currentId.getId();
         try {
             QueryWrapper<ServiceObj> queryWrapper = new QueryWrapper<>();
