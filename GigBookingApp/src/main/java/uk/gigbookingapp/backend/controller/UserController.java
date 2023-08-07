@@ -24,8 +24,7 @@ public class UserController {
     private CustomerPasswordMapper customerPasswordMapper;
     @Autowired
     private CustomerMapper customerMapper;
-    @Autowired
-    private ServiceProviderMapper providerMapper;
+
     @Autowired
     private ServiceProviderPasswordMapper providerPasswordMapper;
     @Autowired
@@ -166,5 +165,6 @@ public class UserController {
         init();
         PublicUserController.sendAvatar(request, response, user, userMapper);
     }
+
 
 }

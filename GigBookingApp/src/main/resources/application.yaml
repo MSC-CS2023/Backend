@@ -6,7 +6,7 @@ spring:
 
     # The username and password can be discussed later
     username: root
-    password: 123456
+    password: 123456lkj
 
   servlet:
     multipart:
