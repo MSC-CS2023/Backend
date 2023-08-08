@@ -21,5 +21,6 @@ public class ServiceObj {
     private Double fee;
     private Long providerId;
     private Long timestamp = System.currentTimeMillis();
+    private String tag;
 
 }

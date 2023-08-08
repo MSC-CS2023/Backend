@@ -21,5 +21,6 @@ public abstract class User {
 
     @JsonIgnore
     private String avatarPath;
+    @JsonIgnore
     private Long avatarTimestamp;
 }

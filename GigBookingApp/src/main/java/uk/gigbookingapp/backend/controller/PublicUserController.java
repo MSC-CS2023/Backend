@@ -1,11 +1,9 @@
 package uk.gigbookingapp.backend.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import jakarta.servlet.ServletOutputStream;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,15 +11,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import uk.gigbookingapp.backend.entity.CurrentId;
 import uk.gigbookingapp.backend.entity.ServicePics;
+import uk.gigbookingapp.backend.entity.ServiceObj;
+import uk.gigbookingapp.backend.entity.ServiceShort;
 import uk.gigbookingapp.backend.entity.User;
 import uk.gigbookingapp.backend.mapper.CustomerMapper;
+import uk.gigbookingapp.backend.mapper.ServiceMapper;
 import uk.gigbookingapp.backend.mapper.ServicePicsMapper;
 import uk.gigbookingapp.backend.mapper.ServiceProviderMapper;
 import uk.gigbookingapp.backend.type.UserType;
+import uk.gigbookingapp.backend.utils.Result;
 
-import java.io.File;
 import java.io.IOException;
-import java.net.URLEncoder;
+import java.util.List;
 
 @Controller
 @RequestMapping({"/public/customer", "/public/service_provider"})
@@ -32,6 +33,8 @@ public class PublicUserController {
     private ServiceProviderMapper providerMapper;
     @Autowired
     private ServicePicsMapper servicePicsMapper;
+    @Autowired
+    private ServiceMapper serviceMapper;
 
 
     private CurrentId currentId;
@@ -57,64 +60,33 @@ public class PublicUserController {
             HttpServletResponse response) throws IOException {
         init();
         User user = (User) userMapper.selectById(id);
-        sendAvatar(request, response, user, userMapper);
+        MainController.sendAvatar(request, response, user, userMapper);
         return;
     }
 
-    public static void sendAvatar(
-            HttpServletRequest request,
-            HttpServletResponse response,
-            User user,
-            BaseMapper userMapper) throws IOException {
-        String userPath = user.getAvatarPath();
-        String path = request.getServletContext().getRealPath(userPath);
-        File file = new File(path);
-        if (!file.exists()){
-            user.setAvatarPath("");
-            userMapper.updateById(user);
-        }
-        String filename = FilenameUtils.getName(userPath);
-        System.out.println(filename);
-        ServletOutputStream stream = response.getOutputStream();
-        response.addHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode(filename, "UTF-8"));
-        response.setContentType("application/octet-stream");
-        stream.write(FileUtils.readFileToByteArray(file));
-        stream.flush();
-        stream.close();
-    }
 
-
-    @GetMapping("/get_pic")
-    public void getPicture(
+    @GetMapping("/services")
+    public Result services(
             @RequestParam Long id,
-            HttpServletRequest request,
-            HttpServletResponse response) throws  IOException {
-        init();
-        ServicePics picture = (ServicePics) userMapper.selectById(id);
-        sendPicture(request, response, picture, servicePicsMapper);
-        return;
-    }
-
-    public static void sendPicture(
-            HttpServletRequest request,
-            HttpServletResponse response,
-            ServicePics picture,
-            ServicePicsMapper pictureMapper) throws IOException{
-        String picPath = picture.getPicPath();
-        String path = request.getServletContext().getRealPath(picPath);
-        File file = new File(path);
-        if (!file.exists()){
-            picture.setPicPath("");
-            pictureMapper.updateById(picture);
+            @RequestParam(required = false, defaultValue = "0") Integer start,
+            @RequestParam(required = false, defaultValue = "10") Integer num){
+        if (currentId.getUsertype() != UserType.PROVIDER){
+            return Result.error();
         }
-        String filename = FilenameUtils.getName(picPath);
-        System.out.println(filename);
-        ServletOutputStream stream = response.getOutputStream();
-        response.addHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode(filename, "UTF-8"));
-        response.setContentType("application/octet-stream");
-        stream.write(FileUtils.readFileToByteArray(file));
-        stream.flush();
-        stream.close();
+        init();
+        if (start < 0){
+            return Result.error().setMessage("Invalid value of 'start'.");
+        }
+        if (num < 0){
+            return Result.error().setMessage("Invalid value of 'num'.");
+        }
+        QueryWrapper<ServiceObj> wrapper = new QueryWrapper<>();
+        wrapper.eq("provider_id", id)
+                .orderByDesc("timestamp")
+                .last("limit " + start + ", " + num);
+        List<ServiceShort> list = ServiceShort.generateList(serviceMapper.selectList(wrapper), providerMapper);
+
+        return Result.ok().data("services", list);
     }
 
 

@@ -3,6 +3,7 @@ package uk.gigbookingapp.backend.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import io.jsonwebtoken.Claims;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.apache.commons.io.FilenameUtils;
@@ -12,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import uk.gigbookingapp.backend.entity.*;
 import uk.gigbookingapp.backend.mapper.*;
 import uk.gigbookingapp.backend.type.UserType;
+import uk.gigbookingapp.backend.utils.JwtUtils;
 import uk.gigbookingapp.backend.utils.Result;
 
 import java.io.File;
@@ -24,7 +26,8 @@ public class UserController {
     private CustomerPasswordMapper customerPasswordMapper;
     @Autowired
     private CustomerMapper customerMapper;
-
+    @Autowired
+    private ServiceProviderMapper providerMapper;
     @Autowired
     private ServiceProviderPasswordMapper providerPasswordMapper;
     @Autowired
@@ -54,7 +57,7 @@ public class UserController {
             passwordMapper = customerPasswordMapper;
             avatarPath = customerAvatarPath;
         } else {
-            userMapper = customerMapper;
+            userMapper = providerMapper;
             passwordMapper = providerPasswordMapper;
             avatarPath = providerAvatarPath;
         }
@@ -135,9 +138,10 @@ public class UserController {
 
         UpdateWrapper<User> wrapper = new UpdateWrapper<>();
         wrapper.eq("id", id)
-                .set("avatar_path", avatarPath + filename);
+                .set("avatar_path", avatarPath + filename)
+                .set("avatar_timestamp", System.currentTimeMillis());
         userMapper.update(null, wrapper);
-        return Result.ok();
+        return Result.ok().data("timestamp", ((User) userMapper.selectById(id)).getAvatarTimestamp());
     }
 
     public void saveAvatar(MultipartFile avatar, String path, String filename) throws Exception{
@@ -154,6 +158,9 @@ public class UserController {
 
     public void deleteUserAvatar(HttpServletRequest request) {
         String path = request.getServletContext().getRealPath(user.getAvatarPath());
+        if (path == null) {
+            return;
+        }
         File file = new File(path);
         if (file.exists()){
             file.delete();
@@ -163,8 +170,23 @@ public class UserController {
     @GetMapping("get_avatar")
     public void getAvatar(HttpServletRequest request, HttpServletResponse response) throws IOException {
         init();
-        PublicUserController.sendAvatar(request, response, user, userMapper);
+        MainController.sendAvatar(request, response, user, userMapper);
     }
 
+
+    @GetMapping("/get_avatar_timestamp")
+    public Result getAvatarTimestamp(){
+        init();
+        return Result.ok().data("timestamp", user.getAvatarTimestamp());
+    }
+
+    @GetMapping("/renew_token")
+    public Result renewToken(){
+        init();
+        String token = JwtUtils.generateToken(user, currentId.getUsertype());
+        Claims claims = JwtUtils.getClaimsByToken(token);
+        Long exp = claims.getExpiration().getTime();
+        return Result.ok().data("user", user).data("token", token).data("exp", exp);
+    }
 
 }

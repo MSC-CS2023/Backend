@@ -84,7 +84,7 @@ public class LoginController {
         String token = JwtUtils.generateToken(user, usertype);
         Claims claims = JwtUtils.getClaimsByToken(token);
         Long exp = claims.getExpiration().getTime();
-        return Result.ok().data("user", user).data("token", token).data("user", user).data("exp", exp);
+        return Result.ok().data("user", user).data("token", token).data("exp", exp);
     }
 
 

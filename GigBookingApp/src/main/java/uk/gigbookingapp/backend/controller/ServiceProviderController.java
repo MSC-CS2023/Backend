@@ -3,7 +3,6 @@ package uk.gigbookingapp.backend.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import jakarta.servlet.http.HttpServletRequest;
-import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -33,16 +32,14 @@ public class ServiceProviderController {
 
     private CurrentId currentId;
 
-    private ServicePics picture;
-
-    private static final String picturePath = "/upload/picture/provider/";
+    private static final String picturePath = "/upload/picture/";
 
     @Autowired
     ServiceProviderController(CurrentId currentId) {
         this.currentId = currentId;
     }
 
-    @GetMapping("/services/get")
+    @GetMapping("/service/get")
     public Result getServices(
             @RequestParam(required = false, defaultValue = "0") Integer start,
             @RequestParam(required = false, defaultValue = "10") Integer num){
@@ -57,7 +54,7 @@ public class ServiceProviderController {
         wrapper.eq("provider_id", id)
                 .orderByDesc("timestamp")
                 .last("limit " + start + ", " + num);
-        List<ServiceShort> list = ServiceShort.generateList(serviceMapper.selectList(wrapper));
+        List<ServiceShort> list = ServiceShort.generateList(serviceMapper.selectList(wrapper), providerMapper);
 
         return Result.ok().data("services", list);
     }
@@ -67,7 +64,8 @@ public class ServiceProviderController {
             @RequestParam String title,
             @RequestParam String description,
             @RequestParam(required = false, defaultValue = "") String detail,
-            @RequestParam Double fee){
+            @RequestParam Double fee,
+            @RequestParam(required = false, defaultValue = "") String tag){
         long id = currentId.getId();
         ServiceObj serviceObj = new ServiceObj();
 
@@ -76,6 +74,7 @@ public class ServiceProviderController {
         serviceObj.setFee(fee);
         serviceObj.setDetail(detail);
         serviceObj.setProviderId(id);
+        serviceObj.setTag(tag);
         serviceMapper.insert(serviceObj);
         return Result.ok().data("service", serviceObj);
     }
@@ -85,19 +84,13 @@ public class ServiceProviderController {
             @RequestParam("service_id") Long serviceId,
             @RequestParam String key,
             @RequestParam String value){
-        long id = currentId.getId();
 
-        QueryWrapper<ServiceObj> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("id", serviceId)
-                .eq("provider_id", id);
-
-        ServiceObj service = serviceMapper.selectOne(queryWrapper);
-        if (service == null) { return Result.error().setMessage("Invalid Service id."); }
+        if (checkInvalidService(serviceId)) { return Result.error().setMessage("Invalid Service id."); }
 
         if (key.compareToIgnoreCase("id") == 0 || key.compareToIgnoreCase("provider_id") == 0){
             return Result.error().setMessage("Invalid key.");
         }
-
+        ServiceObj service = serviceMapper.selectById(serviceId);
         UpdateWrapper<ServiceObj> updateWrapper = new UpdateWrapper<>(service);
         try {
             updateWrapper.set(key, value);
@@ -108,6 +101,7 @@ public class ServiceProviderController {
 
         return Result.ok().data("service", serviceMapper.selectById(serviceId));
     }
+
 
     @DeleteMapping("/service/delete")
     public Result deleteService(@RequestParam("service_id") Long serviceId){
@@ -123,31 +117,29 @@ public class ServiceProviderController {
         return Result.ok();
     }
 
-    @PostMapping("/service/add_pic")
+    @PutMapping ("/service/add_pic")
     public Result updatePicture(
             @RequestParam("service_id") Long serviceId,
-            MultipartFile pictureFile,
+            @RequestParam MultipartFile picture,
             HttpServletRequest request){
-        long id = currentId.getId();
-        this.picture = servicePicsMapper.selectById(id);
-        deletePicture(request);
-        String path = request.getServletContext().getRealPath(picturePath);
-        String filename = id + "." +
-                FilenameUtils.getExtension(pictureFile.getOriginalFilename());
+        if (checkInvalidService(serviceId)){
+            return Result.error().setMessage("Invalid service id.");
+        }
+        String path = request.getServletContext().getRealPath(picturePath) + serviceId + "/";
+        String filename = picture.getOriginalFilename();
         try {
-            savaPicture(pictureFile, path, filename);
+            savePicture(picture, path, filename);
         } catch (Exception e) {
             return Result.error().setMessage("Add picture error");
         }
-
-        UpdateWrapper<ServicePics> wrapper = new UpdateWrapper<>();
-        wrapper.eq("id",serviceId)
-                .set("picture_path", picturePath + filename);
-        servicePicsMapper.update(null, wrapper);
+        ServicePics servicePics = new ServicePics();
+        servicePics.setServiceId(serviceId);
+        servicePics.setPicPath(picturePath + serviceId + "/" + filename);
+        servicePicsMapper.insert(servicePics);
         return Result.ok();
     }
 
-    public void savaPicture(MultipartFile picture, String path, String filename) throws Exception{
+    public void savePicture(MultipartFile picture, String path, String filename) throws Exception{
         File dir = new File(path);
         if(!dir.exists()){
             if(!dir.mkdirs()){
@@ -159,12 +151,38 @@ public class ServiceProviderController {
         picture.transferTo(file);
     }
 
-    @PostMapping("/service/delete_pic")
-    public void deletePicture(HttpServletRequest request){
-        String path = request.getServletContext().getRealPath(picture.getPicPath());
+    @DeleteMapping("/service/delete_pic")
+    public Result deletePicture(
+            @RequestParam Long id,
+            HttpServletRequest request){
+        ServicePics servicePic = servicePicsMapper.selectById(id);
+        if (checkInvalidService(servicePic)){
+            return Result.error().setMessage("Invalid service id.");
+        }
+        String path = request.getServletContext().getRealPath(servicePic.getPicPath());
         File file = new File(path);
         if(file.exists()){
             file.delete();
+        }
+        servicePicsMapper.deleteById(servicePic);
+        return Result.ok();
+    }
+
+
+    private boolean checkInvalidService(Long serviceId) {
+        QueryWrapper<ServiceObj> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("id", serviceId)
+                .eq("provider_id", currentId.getId());
+
+        ServiceObj service = serviceMapper.selectOne(queryWrapper);
+        return service == null;
+    }
+
+    private boolean checkInvalidService(ServicePics servicePic) {
+        if (servicePic == null){
+            return true;
+        } else {
+            return checkInvalidService(servicePic.getServiceId());
         }
     }
 
