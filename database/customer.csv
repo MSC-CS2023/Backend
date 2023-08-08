@@ -1,5 +1,8 @@
-"id","username","email","address","tel","avatar_path","avatar_timestamp"
-"11","alice","123@gmail.com","","1231231234","",
-"12","bob","456@gmail.com","","","",
-"13","""aaa""","""aaa""",,,,
-"654340098","alice","123alice@gmail.com","Room404, Not Found Rd, London","1234567890","",
+"id","username","email","address","tel","avatar_path","avatar_timestamp","preference_vector","preference_timestamp"
+"11","alice","123@gmail.com","","1231231234",,,"0.97847 2.95786 0.00000 0.97841","1691205551391"
+"12","bob","456@gmail.com","","",,,"1.00000 3.00000 0.00000 1.00000","1691205551391"
+"13","""aaa""","""aaa""","","",,,,
+"654340098","alice","123alice@gmail.com","Room404, Not Found Rd, London","1234567890",,,,
+"1686711327449489410","1233","23412","","",,,,
+"1686711662456938498","12334","234122","","",,,,
+"1686712368517685250","12334","123@gmail","","",,,,
