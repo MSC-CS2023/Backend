@@ -67,8 +67,8 @@ public class UserController {
     @GetMapping("/self_details")
     public Result getSelfDetails(){
         init();
-        Customer customer = customerMapper.selectById(id);
-        return Result.ok().data("user", customer);
+        User user = (User) userMapper.selectById(id);
+        return Result.ok().data("user", user);
     }
 
     @DeleteMapping("/delete_account")
@@ -85,7 +85,7 @@ public class UserController {
             passwordMapper.deleteById(id);
         } catch (Exception ignored){}
         try {
-            customerMapper.deleteById(id);
+            userMapper.deleteById(id);
         } catch (Exception ignored){}
 
         return Result.ok();
@@ -97,9 +97,9 @@ public class UserController {
             @RequestParam String value){
         init();
         try {
-            UpdateWrapper<Customer> wrapper = new UpdateWrapper<>();
+            UpdateWrapper<User> wrapper = new UpdateWrapper<>();
             wrapper.eq("id", id).set(key, value);
-            customerMapper.update(null, wrapper);
+            userMapper.update(null, wrapper);
         } catch (Exception e){
             return Result.error().setMessage("Invalid key");
         }

@@ -3,7 +3,7 @@ package uk.gigbookingapp.backend.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import uk.gigbookingapp.backend.mapper.ServiceMapper;
+import uk.gigbookingapp.backend.mapper.ServicePicsMapper;
 import uk.gigbookingapp.backend.mapper.ServiceProviderMapper;
 
 import java.util.LinkedList;
@@ -18,13 +18,17 @@ public class ServiceShort {
     private Double fee;
     private Long providerId;
     private String username;
+    private String description;
+    private Long pictureId;
 
-    public ServiceShort(ServiceObj serviceObj, ServiceProviderMapper mapper){
+    public ServiceShort(ServiceObj serviceObj){
         this.fee = serviceObj.getFee();
         this.id = serviceObj.getId();
         this.title = serviceObj.getTitle();
         this.providerId = serviceObj.getProviderId();
-        this.username = mapper.selectById(providerId).getUsername();
+        this.username = serviceObj.getUsername();
+        this.description = serviceObj.getDescription();
+        this.pictureId = serviceObj.getPictureId();
     }
 
 //    public static ServiceShort generateServiceShort(ServiceObj serviceObj){
@@ -36,10 +40,15 @@ public class ServiceShort {
 //        return serviceShort;
 //    }
 
-    public static LinkedList<ServiceShort> generateList(List<ServiceObj> list, ServiceProviderMapper mapper){
+    public static LinkedList<ServiceShort> generateList(
+            List<ServiceObj> list,
+            ServiceProviderMapper providerMapper,
+            ServicePicsMapper picsMapper){
         LinkedList<ServiceShort> linkedList = new LinkedList<>();
         for (ServiceObj serviceObj : list) {
-            linkedList.add(new ServiceShort(serviceObj, mapper));
+            serviceObj.setUsername(providerMapper);
+            serviceObj.setPictureId(picsMapper);
+            linkedList.add(new ServiceShort(serviceObj));
         }
         return linkedList;
     }

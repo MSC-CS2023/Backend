@@ -84,7 +84,7 @@ public class PublicUserController {
         wrapper.eq("provider_id", id)
                 .orderByDesc("timestamp")
                 .last("limit " + start + ", " + num);
-        List<ServiceShort> list = ServiceShort.generateList(serviceMapper.selectList(wrapper), providerMapper);
+        List<ServiceShort> list = ServiceShort.generateList(serviceMapper.selectList(wrapper), providerMapper, servicePicsMapper);
 
         return Result.ok().data("services", list);
     }

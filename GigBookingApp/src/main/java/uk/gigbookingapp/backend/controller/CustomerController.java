@@ -1,21 +1,15 @@
 package uk.gigbookingapp.backend.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.github.yulichang.query.MPJQueryWrapper;
-import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import uk.gigbookingapp.backend.entity.*;
 import uk.gigbookingapp.backend.mapper.*;
 import uk.gigbookingapp.backend.type.TagsType;
-import uk.gigbookingapp.backend.type.UserType;
-import uk.gigbookingapp.backend.utils.JwtUtils;
 import uk.gigbookingapp.backend.utils.Result;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/customer")
@@ -31,6 +25,8 @@ public class CustomerController {
     private CustomerLogMapper customerLogMapper;
     @Autowired
     private ServiceProviderMapper providerMapper;
+    @Autowired
+    private ServicePicsMapper servicePicsMapper;
 
     private CurrentId currentId;
 
@@ -57,9 +53,12 @@ public class CustomerController {
         List<Favourite> list = favouriteMapper.selectList(wrapper);
         for (Favourite f: list) {
             long id = f.getServiceId();
-            f.setServiceShort(new ServiceShort(serviceMapper.selectById(id), providerMapper));
+            ServiceObj serviceObj = serviceMapper.selectById(id);
+            serviceObj.setPictureId(servicePicsMapper);
+            serviceObj.setUsername(providerMapper);
+            f.setServiceShort(new ServiceShort(serviceObj));
         }
-        return Result.ok().data("booking_orders", list);
+        return Result.ok().data("favourites", list);
     }
 
     @GetMapping("/favourite/check")
@@ -88,7 +87,10 @@ public class CustomerController {
         Favourite favourite = new Favourite();
         favourite.setCustomerId(currentId.getId());
         favourite.setServiceId(id);
-        favourite.setServiceShort(new ServiceShort(serviceMapper.selectById(id), providerMapper));
+        ServiceObj serviceObj = serviceMapper.selectById(id);
+        serviceObj.setPictureId(servicePicsMapper);
+        serviceObj.setUsername(providerMapper);
+        favourite.setServiceShort(new ServiceShort(serviceObj));
         favouriteMapper.insert(favourite);
         return Result.ok().data("favourite", favourite);
     }
@@ -114,6 +116,8 @@ public class CustomerController {
         if (serviceObj == null) {
             return Result.error().setMessage("Invalid id.");
         }
+        serviceObj.setPictureId(servicePicsMapper);
+        serviceObj.setUsername(providerMapper);
         CustomerLog customerLog = new CustomerLog();
         customerLog.setCustomerId(currentId.getId());
         customerLog.setServiceId(id);
@@ -136,7 +140,7 @@ public class CustomerController {
                 vector.set(i, vector.get(i) * k);
             }
         }
-        int index = TagsType.getIndex(serviceMapper.selectById(log.getServiceId()).getTag());
+        int index = TagsType.valueOf(serviceMapper.selectById(log.getServiceId()).getTag().toUpperCase()).ordinal();
         vector.set(index, vector.get(index) + 1);
         customer.setVector(vector);
         customer.setPreferenceTimestamp(log.getTimestamp());
@@ -182,11 +186,13 @@ public class CustomerController {
 
         List<ServiceShort> serviceShorts = new ArrayList<>();
         for (CustomerLog log : logList){
-            serviceShorts.add(new ServiceShort(serviceMapper.selectById(log.getServiceId()), providerMapper));
+            ServiceObj serviceObj = serviceMapper.selectById(log.getServiceId());
+            serviceObj.setPictureId(servicePicsMapper);
+            serviceObj.setUsername(providerMapper);
+            serviceShorts.add(new ServiceShort(serviceObj));
         }
 
         return Result.ok().data("services", serviceShorts);
-
     }
 
     private Long getNearest(List<Customer> customerList, List<Double> vector) {

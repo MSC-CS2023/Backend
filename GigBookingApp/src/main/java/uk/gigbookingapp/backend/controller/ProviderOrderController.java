@@ -7,6 +7,7 @@ import uk.gigbookingapp.backend.entity.BookingOrder;
 import uk.gigbookingapp.backend.entity.CurrentId;
 import uk.gigbookingapp.backend.mapper.BookingOrderMapper;
 import uk.gigbookingapp.backend.mapper.ServiceMapper;
+import uk.gigbookingapp.backend.mapper.ServicePicsMapper;
 import uk.gigbookingapp.backend.mapper.ServiceProviderMapper;
 import uk.gigbookingapp.backend.utils.Result;
 
@@ -24,6 +25,8 @@ public class ProviderOrderController {
     ServiceProviderMapper providerMapper;
     @Autowired
     ServiceMapper serviceMapper;
+    @Autowired
+    ServicePicsMapper servicePicsMapper;
 
     private CurrentId currentId;
     public ProviderOrderController(CurrentId currentId){
@@ -43,6 +46,7 @@ public class ProviderOrderController {
                 .last("limit " + start + "," + num);
 
         List<BookingOrder> list = orderMapper.selectList(wrapper);
+        list.forEach(bookingOrder -> bookingOrder.setServiceShort(serviceMapper, servicePicsMapper, providerMapper));
         return Result.ok().data("booking_orders", list);
     }
 
@@ -56,7 +60,8 @@ public class ProviderOrderController {
         if (order == null){
             return Result.error().setMessage("The order with the given id does not belong to the user.");
         }
-        return Result.ok().data("booking_orders", order);
+        order.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
+        return Result.ok().data("booking_order", order);
     }
 
     @GetMapping("/advanced")
@@ -90,6 +95,7 @@ public class ProviderOrderController {
                 .orderByDesc("creation_timestamp")
                 .last("limit " + start + "," + num);
         List<BookingOrder> list = orderMapper.selectList(wrapper);
+        list.forEach(bookingOrder -> bookingOrder.setServiceShort(serviceMapper, servicePicsMapper, providerMapper));
         return Result.ok().data("booking_orders", list);
     }
 
@@ -102,6 +108,7 @@ public class ProviderOrderController {
         order.setIsConfirmed(true);
         order.setConfirmationTimestamp(System.currentTimeMillis());
         orderMapper.updateById(order);
+        order.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
         return Result.ok().data("booking_order", orderMapper.selectById(id));
     }
 
@@ -114,6 +121,7 @@ public class ProviderOrderController {
         order.setIsRejected(true);
         order.setRejectionTimestamp(System.currentTimeMillis());
         orderMapper.updateById(order);
+        order.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
         return Result.ok().data("booking_order", orderMapper.selectById(id));
     }
 

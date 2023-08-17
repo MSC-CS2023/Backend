@@ -6,10 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import uk.gigbookingapp.backend.entity.BookingOrder;
 import uk.gigbookingapp.backend.entity.CurrentId;
 import uk.gigbookingapp.backend.entity.ServiceObj;
-import uk.gigbookingapp.backend.mapper.BookingOrderMapper;
-import uk.gigbookingapp.backend.mapper.CustomerMapper;
-import uk.gigbookingapp.backend.mapper.ServiceMapper;
-import uk.gigbookingapp.backend.mapper.ServiceProviderMapper;
+import uk.gigbookingapp.backend.entity.ServiceShort;
+import uk.gigbookingapp.backend.mapper.*;
 import uk.gigbookingapp.backend.utils.Result;
 
 import java.util.List;
@@ -28,6 +26,8 @@ public class CustomerOrderController {
     ServiceMapper serviceMapper;
     @Autowired
     CustomerMapper customerMapper;
+    @Autowired
+    ServicePicsMapper servicePicsMapper;
 
     private CurrentId currentId;
 
@@ -45,6 +45,7 @@ public class CustomerOrderController {
                 .orderByDesc("creation_timestamp")
                 .last("limit " + start + "," + num);
         List<BookingOrder> list = orderMapper.selectList(wrapper);
+        list.forEach(bookingOrder -> bookingOrder.setServiceShort(serviceMapper, servicePicsMapper, providerMapper));
         return Result.ok().data("booking_orders", list);
     }
 
@@ -89,6 +90,7 @@ public class CustomerOrderController {
         wrapper.orderByDesc("creation_timestamp")
                 .last("limit " + start + "," + num);
         List<BookingOrder> list = orderMapper.selectList(wrapper);
+        list.forEach(bookingOrder -> bookingOrder.setServiceShort(serviceMapper, servicePicsMapper, providerMapper));
         return Result.ok().data("booking_orders", list);
     }
 
@@ -101,6 +103,7 @@ public class CustomerOrderController {
         order.setIsCanceled(true);
         order.setCancelTimestamp(System.currentTimeMillis());
         orderMapper.updateById(order);
+        order.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
         return Result.ok().data("booking_order", orderMapper.selectById(id));
     }
 
@@ -113,6 +116,7 @@ public class CustomerOrderController {
         order.setIsFinished(true);
         order.setFinishTimestamp(System.currentTimeMillis());
         orderMapper.updateById(order);
+        order.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
         return Result.ok().data("booking_order", orderMapper.selectById(id));
     }
 
@@ -130,6 +134,7 @@ public class CustomerOrderController {
         }
         order.setMark(mark);
         orderMapper.updateById(order);
+        order.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
         return Result.ok().data("booking_order", orderMapper.selectById(id));
     }
 
@@ -155,6 +160,7 @@ public class CustomerOrderController {
         order.setStartTimestamp(startTimestamp);
         order.setEndTimestamp(endTimestamp);
         orderMapper.insert(order);
+        order.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
         return Result.ok().data("booking_order", order);
     }
 

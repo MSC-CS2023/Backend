@@ -27,30 +27,31 @@ public class ServerProviderInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
             throws Exception {
-        String token = request.getHeader("Authorization");
-        Claims claims;
-        try {
-            claims = JwtUtils.getClaimsByToken(token);
-        } catch (Exception e){
-            return Result.error(response, "Token is invalid.");
-        }
-
-        Double usertype = (Double) claims.get("usertype");
-        if (usertype == null){
-            return Result.error(response, "No usertype in the token.");
-        }
-        if (usertype != (int) UserType.PROVIDER){
-            return Result.error(response, "User type in the token is not provider.");
-        }
-        String uid = claims.getSubject();
-        if (uid == null){
-            return Result.error(response, "ID does not exist in the token.");
-        }
-        if (mapper.selectById(uid) == null){
-            return Result.error(response, "Invalid ID.");
-        }
-        this.currentId.setId(Long.parseLong(uid));
-
-        return true;
+        return JwtUtils.checkToken(request, response, UserType.PROVIDER, currentId, mapper);
+//        String token = request.getHeader("Authorization");
+//        Claims claims;
+//        try {
+//            claims = JwtUtils.getClaimsByToken(token);
+//        } catch (Exception e){
+//            return Result.error(response, "Token is invalid.");
+//        }
+//
+//        Double usertype = (Double) claims.get("usertype");
+//        if (usertype == null){
+//            return Result.error(response, "No usertype in the token.");
+//        }
+//        if (usertype != (int) UserType.PROVIDER){
+//            return Result.error(response, "User type in the token is not provider.");
+//        }
+//        String uid = claims.getSubject();
+//        if (uid == null){
+//            return Result.error(response, "ID does not exist in the token.");
+//        }
+//        if (mapper.selectById(uid) == null){
+//            return Result.error(response, "Invalid ID.");
+//        }
+//        this.currentId.setId(Long.parseLong(uid));
+//
+//        return true;
     }
 }

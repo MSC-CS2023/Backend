@@ -1,11 +1,17 @@
 package uk.gigbookingapp.backend.utils;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import uk.gigbookingapp.backend.entity.CurrentId;
 import uk.gigbookingapp.backend.entity.User;
+import uk.gigbookingapp.backend.type.UserType;
 
+import java.net.http.HttpResponse;
 import java.security.Key;
 import java.util.Date;
 import java.util.HashMap;
@@ -49,5 +55,38 @@ public class JwtUtils {
                 .build()
                 .parseClaimsJws(token)
                 .getBody();
+    }
+
+    public static boolean checkToken(
+            HttpServletRequest request,
+            HttpServletResponse response,
+            int type,
+            CurrentId currentId,
+            BaseMapper mapper) throws Exception{
+        String token = request.getHeader("Authorization");
+        Claims claims;
+        try {
+            claims = JwtUtils.getClaimsByToken(token);
+        } catch (Exception e){
+            return Result.error(response, "Token is invalid.");
+        }
+
+        Double usertype = (Double) claims.get("usertype");
+        if (usertype == null){
+            return Result.error(response, "No usertype in the token.");
+        }
+        if (usertype != type){
+            return Result.error(response, "User type is wrong.");
+        }
+        String uid = claims.getSubject();
+        if (uid == null){
+            return Result.error(response, "ID does not exist in the token.");
+        }
+        if (mapper.selectById(uid) == null){
+            return Result.error(response, "Invalid ID.");
+        }
+        currentId.setId(Long.parseLong(uid));
+        currentId.setUsertype(usertype.intValue());
+        return true;
     }
 }

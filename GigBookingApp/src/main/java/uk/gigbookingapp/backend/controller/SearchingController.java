@@ -69,7 +69,7 @@ public class SearchingController {
 
         wrapper.last("limit " + start + "," + num);
         List<ServiceObj> list = serviceMapper.selectList(wrapper);
-        LinkedList<ServiceShort> linkedList = ServiceShort.generateList(list, providerMapper);
+        LinkedList<ServiceShort> linkedList = ServiceShort.generateList(list, providerMapper, servicePicsMapper);
         return Result.ok().data("services", linkedList);
     }
 
@@ -81,7 +81,7 @@ public class SearchingController {
         QueryWrapper<ServiceObj> wrapper = new QueryWrapper<>();
         wrapper.last("order by rand() limit " + num);
         List<ServiceObj> list = serviceMapper.selectList(wrapper);
-        LinkedList<ServiceShort> linkedList = ServiceShort.generateList(list, providerMapper);
+        LinkedList<ServiceShort> linkedList = ServiceShort.generateList(list, providerMapper, servicePicsMapper);
         return Result.ok().data("services", linkedList);
     }
 
@@ -91,6 +91,8 @@ public class SearchingController {
         if (serviceObj == null) {
             return Result.error().setMessage("Invalid id.");
         }
+        serviceObj.setPictureId(servicePicsMapper);
+        serviceObj.setUsername(providerMapper);
         return Result.ok().data("service", serviceObj);
     }
 
@@ -110,5 +112,39 @@ public class SearchingController {
         }
         MainController.sendPic(response, picPath, file);
     }
+
+    @GetMapping("/get_by_tag")
+    public Result getByToken(
+            @RequestParam String tag,
+            @RequestParam(value = "sort_by", required = false, defaultValue = "time") String sortBy,
+            @RequestParam(required = false, defaultValue = "true") Boolean descending,
+            @RequestParam(required = false, defaultValue = "0") Integer start,
+            @RequestParam(required = false, defaultValue = "10") Integer num){
+
+        if (!SortType.checkAvailable(sortBy)){
+            return Result.error().setMessage("Invalid parameter 'sort_by");
+        }
+        if (start < 0){
+            return Result.error().setMessage("Invalid value of 'start'.");
+        }
+        if (num < 0){
+            return Result.error().setMessage("Invalid value of 'num'.");
+        }
+        String column = SortType.typeToColumn(sortBy);
+        QueryWrapper<ServiceObj> wrapper = new QueryWrapper<>();
+
+        wrapper.eq("tag", tag);
+        if (descending){
+            wrapper.orderByDesc(column);
+        } else {
+            wrapper.orderByAsc(column);
+        }
+
+        wrapper.last("limit " + start + "," + num);
+        List<ServiceObj> list = serviceMapper.selectList(wrapper);
+        LinkedList<ServiceShort> linkedList = ServiceShort.generateList(list, providerMapper, servicePicsMapper);
+        return Result.ok().data("services", linkedList);
+    }
+
 
 }

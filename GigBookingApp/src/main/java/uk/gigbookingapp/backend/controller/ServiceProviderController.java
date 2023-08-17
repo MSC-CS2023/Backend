@@ -54,7 +54,7 @@ public class ServiceProviderController {
         wrapper.eq("provider_id", id)
                 .orderByDesc("timestamp")
                 .last("limit " + start + ", " + num);
-        List<ServiceShort> list = ServiceShort.generateList(serviceMapper.selectList(wrapper), providerMapper);
+        List<ServiceShort> list = ServiceShort.generateList(serviceMapper.selectList(wrapper), providerMapper, servicePicsMapper);
 
         return Result.ok().data("services", list);
     }
@@ -63,7 +63,7 @@ public class ServiceProviderController {
     public Result addService(
             @RequestParam String title,
             @RequestParam String description,
-            @RequestParam(required = false, defaultValue = "") String detail,
+            //@RequestParam(required = false, defaultValue = "") String detail,
             @RequestParam Double fee,
             @RequestParam(required = false, defaultValue = "") String tag){
         long id = currentId.getId();
@@ -72,10 +72,12 @@ public class ServiceProviderController {
         serviceObj.setTitle(title);
         serviceObj.setDescription(description);
         serviceObj.setFee(fee);
-        serviceObj.setDetail(detail);
+        //serviceObj.setDetail(detail);
         serviceObj.setProviderId(id);
         serviceObj.setTag(tag);
         serviceMapper.insert(serviceObj);
+        //serviceObj.setPictureId(servicePicsMapper);
+        serviceObj.setUsername(providerMapper);
         return Result.ok().data("service", serviceObj);
     }
 
@@ -98,8 +100,10 @@ public class ServiceProviderController {
         } catch (Exception e) {
             return Result.error().setMessage("Invalid key.");
         }
-
-        return Result.ok().data("service", serviceMapper.selectById(serviceId));
+        ServiceObj serviceObj = serviceMapper.selectById(serviceId);
+        serviceObj.setPictureId(servicePicsMapper);
+        serviceObj.setUsername(providerMapper);
+        return Result.ok().data("service", serviceObj);
     }
 
 
