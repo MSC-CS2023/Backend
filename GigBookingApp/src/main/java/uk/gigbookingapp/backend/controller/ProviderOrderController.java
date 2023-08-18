@@ -57,8 +57,8 @@ public class ProviderOrderController {
     public Result getOne(@RequestParam Long id){
         MPJQueryWrapper<BookingOrder> wrapper = new MPJQueryWrapper<>();
         wrapper.selectAll(BookingOrder.class)
-                .eq("id", id)
-                .leftJoin("SERVICE s ON s.provider_id = " + currentId.getId());
+                .eq("t.id", id)
+                .leftJoin("SERVICE s ON s.id = " + currentId.getId());
         BookingOrder order = orderMapper.selectOne(wrapper);
         if (order == null){
             return Result.error().setMessage("The order with the given id does not belong to the user.");

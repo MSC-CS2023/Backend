@@ -20,7 +20,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping({"/service_provider/booking_order", "/customer/booking_order"})
-public class GerOrderController {
+public class GetOrderController {
     @Autowired
     BookingOrderMapper orderMapper;
     @Autowired
@@ -33,7 +33,7 @@ public class GerOrderController {
     ServicePicsMapper servicePicsMapper;
 
     private CurrentId currentId;
-    public GerOrderController(CurrentId currentId){
+    public GetOrderController(CurrentId currentId){
         this.currentId = currentId;
     }
 
@@ -72,7 +72,8 @@ public class GerOrderController {
     private Result getState(Integer start, Integer num, String state){
         MPJQueryWrapper<BookingOrder> wrapper = new MPJQueryWrapper<>();
         if (currentId.getUsertype() == UserType.CUSTOMER){
-            wrapper.eq("customer_id", currentId.getId());
+            wrapper.selectAll(BookingOrder.class)
+                    .eq("customer_id", currentId.getId());
         } else {
             wrapper.selectAll(BookingOrder.class)
                     .leftJoin("service s ON s.id = service_id")
@@ -81,6 +82,7 @@ public class GerOrderController {
         queryByState(wrapper, state);
         wrapper.orderByDesc("creation_timestamp")
                 .last("limit " + start + "," + num);
+
         List<BookingOrder> list = orderMapper.selectList(wrapper);
         list.forEach(bookingOrder -> {
             bookingOrder.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);

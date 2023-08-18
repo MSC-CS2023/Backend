@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import uk.gigbookingapp.backend.entity.CurrentId;
 import uk.gigbookingapp.backend.entity.ServicePics;
 import uk.gigbookingapp.backend.entity.ServiceObj;
@@ -24,7 +25,7 @@ import uk.gigbookingapp.backend.utils.Result;
 import java.io.IOException;
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping({"/public/customer", "/public/service_provider"})
 public class PublicUserController {
     @Autowired
@@ -89,5 +90,13 @@ public class PublicUserController {
         return Result.ok().data("services", list);
     }
 
-
+    @GetMapping("/get_detail")
+    public Result getDetail(@RequestParam Long id){
+        init();
+        User user = (User) userMapper.selectById(id);
+        if (user == null) {
+            return Result.error().setMessage("User does not exist.");
+        }
+        return Result.ok().data("user", user);
+    }
 }
