@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import uk.gigbookingapp.backend.mapper.ServiceMapper;
 import uk.gigbookingapp.backend.mapper.ServicePicsMapper;
 import uk.gigbookingapp.backend.mapper.ServiceProviderMapper;
+import uk.gigbookingapp.backend.type.OrderStateType;
 
 @Data
 @NoArgsConstructor
@@ -78,6 +79,8 @@ public class BookingOrder {
 
     @TableField(exist = false)
     private ServiceShort serviceShort;
+    @TableField(exist = false)
+    private String state;
 
     public void setServiceShort(
             ServiceMapper serviceMapper,
@@ -87,6 +90,20 @@ public class BookingOrder {
         serviceObj.setUsername(providerMapper);
         serviceObj.setPictureId(servicePicsMapper);
         setServiceShort(new ServiceShort(serviceObj));
+    }
+
+    public void setState(){
+        if (isFinished){
+            this.state = OrderStateType.FINISHED.toLowerCase();
+        } else if (isCanceled){
+            this.state = OrderStateType.CANCELED.toLowerCase();
+        } else if (isRejected) {
+            this.state = OrderStateType.REJECTED.toLowerCase();
+        } else if (isConfirmed) {
+            this.state = OrderStateType.PROCESSING.toLowerCase();
+        } else {
+            this.state = OrderStateType.UNCONFIRMED.toLowerCase();
+        }
     }
 
 }

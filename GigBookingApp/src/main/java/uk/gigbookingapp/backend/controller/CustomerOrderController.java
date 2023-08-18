@@ -41,11 +41,13 @@ public class CustomerOrderController {
             @RequestParam(required = false, defaultValue = "10") Integer num){
         QueryWrapper<BookingOrder> wrapper = new QueryWrapper<>();
         wrapper.eq("customer_id", currentId.getId())
-                .eq("is_canceled", 0)
                 .orderByDesc("creation_timestamp")
                 .last("limit " + start + "," + num);
         List<BookingOrder> list = orderMapper.selectList(wrapper);
-        list.forEach(bookingOrder -> bookingOrder.setServiceShort(serviceMapper, servicePicsMapper, providerMapper));
+        list.forEach(bookingOrder -> {
+            bookingOrder.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
+            bookingOrder.setState();
+        });
         return Result.ok().data("booking_orders", list);
     }
 
@@ -58,6 +60,8 @@ public class CustomerOrderController {
         if (order == null){
             return Result.error().setMessage("The order with the given id does not belong to the user.");
         }
+        order.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
+        order.setState();
         return Result.ok().data("booking_orders", order);
     }
 
@@ -90,7 +94,10 @@ public class CustomerOrderController {
         wrapper.orderByDesc("creation_timestamp")
                 .last("limit " + start + "," + num);
         List<BookingOrder> list = orderMapper.selectList(wrapper);
-        list.forEach(bookingOrder -> bookingOrder.setServiceShort(serviceMapper, servicePicsMapper, providerMapper));
+        list.forEach(bookingOrder -> {
+            bookingOrder.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
+            bookingOrder.setState();
+        });
         return Result.ok().data("booking_orders", list);
     }
 
@@ -104,6 +111,7 @@ public class CustomerOrderController {
         order.setCancelTimestamp(System.currentTimeMillis());
         orderMapper.updateById(order);
         order.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
+        order.setState();
         return Result.ok().data("booking_order", orderMapper.selectById(id));
     }
 
@@ -117,6 +125,7 @@ public class CustomerOrderController {
         order.setFinishTimestamp(System.currentTimeMillis());
         orderMapper.updateById(order);
         order.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
+        order.setState();
         return Result.ok().data("booking_order", orderMapper.selectById(id));
     }
 
@@ -135,6 +144,7 @@ public class CustomerOrderController {
         order.setMark(mark);
         orderMapper.updateById(order);
         order.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
+        order.setState();
         return Result.ok().data("booking_order", orderMapper.selectById(id));
     }
 
@@ -161,6 +171,7 @@ public class CustomerOrderController {
         order.setEndTimestamp(endTimestamp);
         orderMapper.insert(order);
         order.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
+        order.setState();
         return Result.ok().data("booking_order", order);
     }
 

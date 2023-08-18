@@ -41,12 +41,15 @@ public class ProviderOrderController {
         MPJQueryWrapper<BookingOrder> wrapper = new MPJQueryWrapper<>();
         wrapper.selectAll(BookingOrder.class)
                 .leftJoin("service s ON s.id = service_id")
-                .eq("is_canceled", 0)
+                .eq("s.provider_id", currentId.getId())
                 .orderByDesc("creation_timestamp")
                 .last("limit " + start + "," + num);
 
         List<BookingOrder> list = orderMapper.selectList(wrapper);
-        list.forEach(bookingOrder -> bookingOrder.setServiceShort(serviceMapper, servicePicsMapper, providerMapper));
+        list.forEach(bookingOrder -> {
+            bookingOrder.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
+            bookingOrder.setState();
+        });
         return Result.ok().data("booking_orders", list);
     }
 
@@ -61,6 +64,7 @@ public class ProviderOrderController {
             return Result.error().setMessage("The order with the given id does not belong to the user.");
         }
         order.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
+        order.setState();
         return Result.ok().data("booking_order", order);
     }
 
@@ -79,7 +83,8 @@ public class ProviderOrderController {
         }
         MPJQueryWrapper<BookingOrder> wrapper = new MPJQueryWrapper<>();
         wrapper.selectAll(BookingOrder.class)
-                .leftJoin("SERVICE s ON s.provider_id = " + currentId.getId());
+                .leftJoin("service s ON s.id = service_id")
+                .eq("s.provider_id", currentId.getId());
         if (or) {
             wrapper.isNull("t.id");
         } else {
@@ -95,33 +100,40 @@ public class ProviderOrderController {
                 .orderByDesc("creation_timestamp")
                 .last("limit " + start + "," + num);
         List<BookingOrder> list = orderMapper.selectList(wrapper);
-        list.forEach(bookingOrder -> bookingOrder.setServiceShort(serviceMapper, servicePicsMapper, providerMapper));
+        list.forEach(bookingOrder -> {
+            bookingOrder.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
+            bookingOrder.setState();
+        });
         return Result.ok().data("booking_orders", list);
     }
 
     @PostMapping("/confirm")
     public Result confirm(@RequestParam Long id){
         BookingOrder order = orderMapper.selectById(id);
-        if (order == null || !Objects.equals(order.getCustomerId(), currentId.getId())){
+        if (order == null ||
+                !Objects.equals(serviceMapper.selectById(order.getServiceId()).getProviderId(), currentId.getId())){
             return Result.error().setMessage("The order with the given id does not belong to the user.");
         }
         order.setIsConfirmed(true);
         order.setConfirmationTimestamp(System.currentTimeMillis());
         orderMapper.updateById(order);
         order.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
+        order.setState();
         return Result.ok().data("booking_order", orderMapper.selectById(id));
     }
 
     @PostMapping("/reject")
     public Result reject(@RequestParam Long id){
         BookingOrder order = orderMapper.selectById(id);
-        if (order == null || !Objects.equals(order.getCustomerId(), currentId.getId())){
+        if (order == null ||
+                !Objects.equals(serviceMapper.selectById(order.getServiceId()).getProviderId(), currentId.getId())){
             return Result.error().setMessage("The order with the given id does not belong to the user.");
         }
         order.setIsRejected(true);
         order.setRejectionTimestamp(System.currentTimeMillis());
         orderMapper.updateById(order);
         order.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
+        order.setState();
         return Result.ok().data("booking_order", orderMapper.selectById(id));
     }
 
