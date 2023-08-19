@@ -56,7 +56,7 @@ public class CustomerController {
             ServiceObj serviceObj = serviceMapper.selectById(id);
             serviceObj.setPictureId(servicePicsMapper);
             serviceObj.setUsername(providerMapper);
-            f.setServiceShort(new ServiceShort(serviceObj));
+            f.setServiceShort(new ServiceShort(serviceObj, providerMapper));
         }
         return Result.ok().data("favourites", list);
     }
@@ -78,7 +78,7 @@ public class CustomerController {
         if(serviceMapper.selectById(id) == null){
             return Result.error().setMessage("Invalid service id.");
         }
-        QueryWrapper<Favourite> wrapper = new QueryWrapper<Favourite>();
+        QueryWrapper<Favourite> wrapper = new QueryWrapper<>();
         wrapper.eq("service_id", id)
                 .eq("customer_id", currentId.getId());
         if(favouriteMapper.selectOne(wrapper) != null){
@@ -90,7 +90,7 @@ public class CustomerController {
         ServiceObj serviceObj = serviceMapper.selectById(id);
         serviceObj.setPictureId(servicePicsMapper);
         serviceObj.setUsername(providerMapper);
-        favourite.setServiceShort(new ServiceShort(serviceObj));
+        favourite.setServiceShort(new ServiceShort(serviceObj, providerMapper));
         favouriteMapper.insert(favourite);
         return Result.ok().data("favourite", favourite);
     }
@@ -100,7 +100,7 @@ public class CustomerController {
         if(serviceMapper.selectById(id) == null){
             return Result.error().setMessage("Invalid service id.");
         }
-        QueryWrapper<Favourite> wrapper = new QueryWrapper<Favourite>();
+        QueryWrapper<Favourite> wrapper = new QueryWrapper<>();
         wrapper.eq("service_id", id)
                 .eq("customer_id", currentId.getId());
         Favourite favourite = favouriteMapper.selectOne(wrapper);
@@ -148,7 +148,9 @@ public class CustomerController {
     }
 
     @GetMapping("/get_rec")
-    public Result getRec(@RequestParam(required = false, defaultValue = "10") Integer num){
+    public Result getRec(
+            @RequestParam(required = false, defaultValue = "") Double[] list,
+            @RequestParam(required = false, defaultValue = "10") Integer num){
         if (num < 0){
             return Result.error().setMessage("Invalid value of 'num'.");
         }
@@ -164,8 +166,7 @@ public class CustomerController {
                 new QueryWrapper<Customer>()
                         .ne("id", currentId.getId())
                         .isNotNull("preference_timestamp")
-                        .gt("preference_timestamp", limitTime)
-        );
+                        .gt("preference_timestamp", limitTime));
 
         Long nearestId = getNearest(customerList, vector);
         if (nearestId == null){
@@ -176,20 +177,21 @@ public class CustomerController {
         wrapper.eq("customer_id", nearestId)
                 .notInSql("service_id",
                         "select service_id where customer_id = " + id)
-                .gt("timestamp", limitTime)
-                .orderByDesc("timestamp")
+                .gt("timestamp", limitTime);
+        for (Double serviceId: list) {
+            wrapper.ne("id", serviceId);
+        }
+
+        wrapper.orderByDesc("timestamp")
                 .last("limit " + num);
-
         List<CustomerLog> logList = customerLogMapper.selectList(wrapper);
-
-        System.out.println();
 
         List<ServiceShort> serviceShorts = new ArrayList<>();
         for (CustomerLog log : logList){
             ServiceObj serviceObj = serviceMapper.selectById(log.getServiceId());
             serviceObj.setPictureId(servicePicsMapper);
             serviceObj.setUsername(providerMapper);
-            serviceShorts.add(new ServiceShort(serviceObj));
+            serviceShorts.add(new ServiceShort(serviceObj, providerMapper));
         }
 
         return Result.ok().data("services", serviceShorts);
@@ -226,7 +228,4 @@ public class CustomerController {
         return sum;
         // It should return Math.sqrt(sum), but that doesn't affect the result.
     }
-
-
-
 }

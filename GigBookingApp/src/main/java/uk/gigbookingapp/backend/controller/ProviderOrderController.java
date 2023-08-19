@@ -157,7 +157,7 @@ public class ProviderOrderController {
         order.setIsRejected(true);
         order.setRejectionTimestamp(System.currentTimeMillis());
         orderMapper.updateById(order);
-        order.setServiceShort(serviceObj);
+        order.setServiceShort(serviceObj, providerMapper);
         order.setState();
         return Result.ok().data("booking_order", orderMapper.selectById(id));
     }

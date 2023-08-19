@@ -120,7 +120,7 @@ public class CustomerOrderController {
         order.setIsCanceled(true);
         order.setCancelTimestamp(System.currentTimeMillis());
         orderMapper.updateById(order);
-        order.setServiceShort(serviceObj);
+        order.setServiceShort(serviceObj, providerMapper);
         order.setState();
         return Result.ok().data("booking_order", orderMapper.selectById(id));
     }
@@ -151,7 +151,7 @@ public class CustomerOrderController {
         order.setIsFinished(true);
         order.setFinishTimestamp(System.currentTimeMillis());
         orderMapper.updateById(order);
-        order.setServiceShort(serviceObj);
+        order.setServiceShort(serviceObj, providerMapper);
         order.setState();
         return Result.ok().data("booking_order", orderMapper.selectById(id));
     }

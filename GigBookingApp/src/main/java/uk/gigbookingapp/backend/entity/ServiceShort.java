@@ -20,8 +20,19 @@ public class ServiceShort {
     private String username;
     private String description;
     private Long pictureId;
+    private Double mark;
 
-    public ServiceShort(ServiceObj serviceObj){
+//    public ServiceShort(ServiceObj serviceObj){
+//        this.fee = serviceObj.getFee();
+//        this.id = serviceObj.getId();
+//        this.title = serviceObj.getTitle();
+//        this.providerId = serviceObj.getProviderId();
+//        this.username = serviceObj.getUsername();
+//        this.description = serviceObj.getDescription();
+//        this.pictureId = serviceObj.getPictureId();
+//    }
+
+    public ServiceShort(ServiceObj serviceObj, ServiceProviderMapper providerMapper){
         this.fee = serviceObj.getFee();
         this.id = serviceObj.getId();
         this.title = serviceObj.getTitle();
@@ -29,6 +40,7 @@ public class ServiceShort {
         this.username = serviceObj.getUsername();
         this.description = serviceObj.getDescription();
         this.pictureId = serviceObj.getPictureId();
+        this.mark = providerMapper.selectById(serviceObj.getProviderId()).getMark();
     }
 
 //    public static ServiceShort generateServiceShort(ServiceObj serviceObj){
@@ -48,7 +60,7 @@ public class ServiceShort {
         for (ServiceObj serviceObj : list) {
             serviceObj.setUsername(providerMapper);
             serviceObj.setPictureId(picsMapper);
-            linkedList.add(new ServiceShort(serviceObj));
+            linkedList.add(new ServiceShort(serviceObj, providerMapper));
         }
         return linkedList;
     }

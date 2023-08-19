@@ -89,11 +89,11 @@ public class BookingOrder {
         ServiceObj serviceObj = serviceMapper.selectById(this.serviceId);
         serviceObj.setUsername(providerMapper);
         serviceObj.setPictureId(servicePicsMapper);
-        setServiceShort(new ServiceShort(serviceObj));
+        setServiceShort(new ServiceShort(serviceObj, providerMapper));
     }
 
-    public void setServiceShort(ServiceObj serviceObj) {
-        setServiceShort(new ServiceShort(serviceObj));
+    public void setServiceShort(ServiceObj serviceObj, ServiceProviderMapper providerMapper) {
+        setServiceShort(new ServiceShort(serviceObj, providerMapper));
     }
 
     private void setServiceShort(ServiceShort serviceShort) {

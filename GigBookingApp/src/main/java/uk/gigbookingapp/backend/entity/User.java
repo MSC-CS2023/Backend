@@ -19,7 +19,7 @@ public abstract class User {
     private String address;
     private String tel;
     @JsonIgnore
-    private Double balance = 0d;
+    private Double balance = 500d;
 
     @JsonIgnore
     private String avatarPath;
