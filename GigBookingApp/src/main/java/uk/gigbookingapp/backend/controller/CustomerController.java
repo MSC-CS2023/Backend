@@ -181,22 +181,29 @@ public class CustomerController {
                         "select service_id and timestamp where customer_id = " + id +
                         " and timestamp > " + limitTime +
                         " order by timestamp desc");
+        QueryWrapper<ServiceObj> randomWrapper = new QueryWrapper<>();
         for (Long serviceId: list) {
-            System.out.println(serviceId);
             wrapper.ne("service_id", serviceId);
+            randomWrapper.ne("id", serviceId);
         }
         wrapper.distinct()
                 .last("limit " + num);
-        List<Long> logList = customerLogMapper.selectJoinList(Long.class, wrapper);
+        List<Long> logServiceIdList = customerLogMapper.selectJoinList(Long.class, wrapper);
 
         List<ServiceShort> serviceShorts = new ArrayList<>();
-        for (Long log : logList){
-            ServiceObj serviceObj = serviceMapper.selectById(log);
+        for (Long logServiceId : logServiceIdList){
+            randomWrapper.ne("id", logServiceId);
+            ServiceObj serviceObj = serviceMapper.selectById(logServiceId);
             serviceObj.setPictureId(servicePicsMapper);
             serviceObj.setUsername(providerMapper);
             serviceShorts.add(new ServiceShort(serviceObj, providerMapper));
         }
-
+        if (serviceShorts.size() < num){
+            randomWrapper.last("limit " + (num - serviceShorts.size()));
+            List<ServiceObj> randomList = serviceMapper.selectList(randomWrapper);
+            List<ServiceShort> randomShortList = ServiceShort.generateList(randomList, providerMapper, servicePicsMapper);
+            serviceShorts.addAll(randomShortList);
+        }
         return Result.ok().data("services", serviceShorts);
     }
 
