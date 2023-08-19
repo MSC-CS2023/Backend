@@ -146,6 +146,7 @@ public class ProviderOrderController {
         } else {
             Customer customer = customerMapper.selectById(order.getCustomerId());
             customer.deposit(serviceObj.getFee());
+            customerMapper.updateById(customer);
         }
         if (order.getIsFinished()){
             return Result.error().setMessage("The order has been finished.");

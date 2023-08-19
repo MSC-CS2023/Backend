@@ -8,7 +8,6 @@ import uk.gigbookingapp.backend.entity.*;
 import uk.gigbookingapp.backend.mapper.*;
 import uk.gigbookingapp.backend.utils.Result;
 
-import java.text.ParseException;
 import java.util.List;
 import java.util.Objects;
 
@@ -113,7 +112,8 @@ public class CustomerOrderController {
         ServiceObj serviceObj = serviceMapper.selectById(order.getServiceId());
         if (!order.getIsRejected()){
             Customer customer = customerMapper.selectById(currentId.getId());
-            customer.withdraw(serviceObj.getFee());
+            customer.deposit(serviceObj.getFee());
+            customerMapper.updateById(customer);
         }
         order.setIsCanceled(true);
         order.setCancelTimestamp(System.currentTimeMillis());
@@ -211,7 +211,9 @@ public class CustomerOrderController {
             return Result.error().setMessage("Insufficient balance.");
         } else {
             customer.withdraw(serviceObj.getFee());
+            customerMapper.updateById(customer);
         }
+
 
         BookingOrder order = new BookingOrder();
         order.setCustomerId(currentId.getId());
