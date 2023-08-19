@@ -757,3 +757,51 @@ java.sql.SQLSyntaxErrorException: Unknown column 'service_id' in 'where clause'
 19-08-2023 21:05:49.706 +01:00  INFO 23516 --- [http-nio-8080-exec-3] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
 19-08-2023 21:41:05.593 +01:00  INFO 23516 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
 19-08-2023 21:41:05.610 +01:00  INFO 23516 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+19-08-2023 22:00:58.524 +01:00  INFO 2852 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 2852 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
+19-08-2023 22:00:58.526 +01:00  INFO 2852 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
+19-08-2023 22:00:59.480 +01:00  INFO 2852 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+19-08-2023 22:00:59.488 +01:00  INFO 2852 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+19-08-2023 22:00:59.488 +01:00  INFO 2852 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+19-08-2023 22:00:59.560 +01:00  INFO 2852 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+19-08-2023 22:00:59.560 +01:00  INFO 2852 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 979 ms
+19-08-2023 22:00:59.740 +01:00  INFO 2852 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
+19-08-2023 22:01:00.614 +01:00  INFO 2852 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+19-08-2023 22:01:00.622 +01:00  INFO 2852 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.539 seconds (process running for 3.085)
+19-08-2023 22:01:37.259 +01:00  INFO 2852 --- [http-nio-8080-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+19-08-2023 22:01:37.259 +01:00  INFO 2852 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+19-08-2023 22:01:37.260 +01:00  INFO 2852 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+19-08-2023 22:01:37.382 +01:00  INFO 2852 --- [http-nio-8080-exec-4] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+19-08-2023 22:05:46.232 +01:00  INFO 2852 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+19-08-2023 22:05:46.236 +01:00  INFO 2852 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+19-08-2023 22:05:49.823 +01:00  INFO 9020 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 9020 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
+19-08-2023 22:05:49.825 +01:00  INFO 9020 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
+19-08-2023 22:05:50.744 +01:00  INFO 9020 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+19-08-2023 22:05:50.753 +01:00  INFO 9020 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+19-08-2023 22:05:50.753 +01:00  INFO 9020 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+19-08-2023 22:05:50.818 +01:00  INFO 9020 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+19-08-2023 22:05:50.819 +01:00  INFO 9020 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 944 ms
+19-08-2023 22:05:51.040 +01:00  INFO 9020 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
+19-08-2023 22:05:51.901 +01:00  INFO 9020 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+19-08-2023 22:05:51.908 +01:00  INFO 9020 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.488 seconds (process running for 3.0)
+19-08-2023 22:05:52.816 +01:00  INFO 9020 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+19-08-2023 22:05:52.816 +01:00  INFO 9020 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+19-08-2023 22:05:52.817 +01:00  INFO 9020 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+19-08-2023 22:05:52.899 +01:00  INFO 9020 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+19-08-2023 22:07:17.755 +01:00  INFO 9020 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+19-08-2023 22:07:17.758 +01:00  INFO 9020 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+19-08-2023 22:07:21.238 +01:00  INFO 23448 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 23448 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
+19-08-2023 22:07:21.240 +01:00  INFO 23448 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
+19-08-2023 22:07:22.119 +01:00  INFO 23448 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+19-08-2023 22:07:22.126 +01:00  INFO 23448 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+19-08-2023 22:07:22.126 +01:00  INFO 23448 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+19-08-2023 22:07:22.191 +01:00  INFO 23448 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+19-08-2023 22:07:22.191 +01:00  INFO 23448 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 906 ms
+19-08-2023 22:07:22.339 +01:00  INFO 23448 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
+19-08-2023 22:07:23.137 +01:00  INFO 23448 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+19-08-2023 22:07:23.146 +01:00  INFO 23448 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.319 seconds (process running for 2.806)
+19-08-2023 22:07:25.934 +01:00  INFO 23448 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+19-08-2023 22:07:25.934 +01:00  INFO 23448 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+19-08-2023 22:07:25.935 +01:00  INFO 23448 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+19-08-2023 22:07:26.024 +01:00  INFO 23448 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+19-08-2023 22:07:35.274 +01:00  INFO 23448 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+19-08-2023 22:07:35.277 +01:00  INFO 23448 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed

@@ -155,51 +155,52 @@ public class CustomerController {
         if (num < 0){
             return Result.error().setMessage("Invalid value of 'num'.");
         }
-        long id = currentId.getId();
-        List<Double> vector = customerMapper.selectById(id).getVector();
-        if (vector == null) {
-            return Result.ok().setMessage("New user.");
-        }
         long nowTime = System.currentTimeMillis();
         int day = 10; // For fewer calculations, only data from active users within 10 days is required.
         long limitTime = nowTime - day * 86400000;
-        List<Customer> customerList = customerMapper.selectList(
-                new QueryWrapper<Customer>()
-                        .ne("id", currentId.getId())
-                        .isNotNull("preference_timestamp")
-                        .gt("preference_timestamp", limitTime));
-
-        Long nearestId = getNearest(customerList, vector);
-        if (nearestId == null){
-            return Result.ok().setMessage("No nearest user.");
+        long id = currentId.getId();
+        Long nearestId = null;
+        List<Double> vector = customerMapper.selectById(id).getVector();
+        if (vector != null) {
+            List<Customer> customerList = customerMapper.selectList(
+                    new QueryWrapper<Customer>()
+                            .ne("id", currentId.getId())
+                            .isNotNull("preference_timestamp")
+                            .gt("preference_timestamp", limitTime));
+            nearestId = getNearest(customerList, vector);
         }
-
         MPJQueryWrapper<CustomerLog> wrapper = new MPJQueryWrapper<>();
-        wrapper.select("service_id")
-                .eq("customer_id", nearestId)
-                .notInSql("service_id",
-                        "select service_id and timestamp where customer_id = " + id +
-                        " and timestamp > " + limitTime +
-                        " order by timestamp desc");
         QueryWrapper<ServiceObj> randomWrapper = new QueryWrapper<>();
+        if (nearestId != null){
+            wrapper.select("service_id")
+                    .eq("customer_id", nearestId)
+                    .notInSql("service_id",
+                            "select service_id and timestamp where customer_id = " + id +
+                                    " and timestamp > " + limitTime +
+                                    " order by timestamp desc")
+                    .distinct()
+                    .last("limit " + num);
+        }
         for (Long serviceId: list) {
-            wrapper.ne("service_id", serviceId);
+            if (nearestId != null){
+                wrapper.ne("service_id", serviceId);
+            }
             randomWrapper.ne("id", serviceId);
         }
-        wrapper.distinct()
-                .last("limit " + num);
-        List<Long> logServiceIdList = customerLogMapper.selectJoinList(Long.class, wrapper);
 
         List<ServiceShort> serviceShorts = new ArrayList<>();
-        for (Long logServiceId : logServiceIdList){
-            randomWrapper.ne("id", logServiceId);
-            ServiceObj serviceObj = serviceMapper.selectById(logServiceId);
-            serviceObj.setPictureId(servicePicsMapper);
-            serviceObj.setUsername(providerMapper);
-            serviceShorts.add(new ServiceShort(serviceObj, providerMapper));
+        if (nearestId != null){
+            List<Long> logServiceIdList = customerLogMapper.selectJoinList(Long.class, wrapper);
+            for (Long logServiceId : logServiceIdList){
+                randomWrapper.ne("id", logServiceId);
+                ServiceObj serviceObj = serviceMapper.selectById(logServiceId);
+                serviceObj.setPictureId(servicePicsMapper);
+                serviceObj.setUsername(providerMapper);
+                serviceShorts.add(new ServiceShort(serviceObj, providerMapper));
+            }
         }
         if (serviceShorts.size() < num){
-            randomWrapper.last("limit " + (num - serviceShorts.size()));
+            randomWrapper.last("order by rand() limit " + (num - serviceShorts.size()));
             List<ServiceObj> randomList = serviceMapper.selectList(randomWrapper);
             List<ServiceShort> randomShortList = ServiceShort.generateList(randomList, providerMapper, servicePicsMapper);
             serviceShorts.addAll(randomShortList);
