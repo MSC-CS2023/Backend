@@ -1,25 +1,21 @@
 package uk.gigbookingapp.backend.ws;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Claims;
 import jakarta.servlet.http.HttpSession;
 import jakarta.websocket.*;
 import jakarta.websocket.server.ServerEndpoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import uk.gigbookingapp.backend.entity.ChattedPeople;
 import uk.gigbookingapp.backend.entity.CurrentId;
-import uk.gigbookingapp.backend.entity.SessionObj;
 import uk.gigbookingapp.backend.mapper.CustomerMapper;
 import uk.gigbookingapp.backend.mapper.ServiceProviderMapper;
 import uk.gigbookingapp.backend.mapper.SessionMapper;
 import uk.gigbookingapp.backend.type.UserType;
 import uk.gigbookingapp.backend.utils.JwtUtils;
-import uk.gigbookingapp.backend.utils.MessageUtils;
 
-import java.util.*;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 @ServerEndpoint(value = "/chat", configurator = GetHttpSessionConfigurator.class)

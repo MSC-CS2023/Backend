@@ -1,15 +1,16 @@
 package uk.gigbookingapp.backend.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.github.yulichang.wrapper.MPJLambdaWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import uk.gigbookingapp.backend.entity.BookingOrder;
-import uk.gigbookingapp.backend.entity.CurrentId;
-import uk.gigbookingapp.backend.entity.ServiceObj;
-import uk.gigbookingapp.backend.entity.ServiceShort;
+import uk.gigbookingapp.backend.entity.*;
 import uk.gigbookingapp.backend.mapper.*;
 import uk.gigbookingapp.backend.utils.Result;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -18,8 +19,6 @@ import java.util.Objects;
 public class CustomerOrderController {
     @Autowired
     BookingOrderMapper orderMapper;
-    @Autowired
-    CustomerController customerController;
     @Autowired
     ServiceProviderMapper providerMapper;
     @Autowired
@@ -107,10 +106,21 @@ public class CustomerOrderController {
         if (order == null || !Objects.equals(order.getCustomerId(), currentId.getId())){
             return Result.error().setMessage("The order with the given id does not belong to the user.");
         }
+        if (order.getIsCanceled()){
+            return Result.error().setMessage("The order has been canceled already.");
+        }
+        if (order.getIsFinished()){
+            return Result.error().setMessage("The order has been finished.");
+        }
+        ServiceObj serviceObj = serviceMapper.selectById(order.getServiceId());
+        if (!order.getIsRejected()){
+            Customer customer = customerMapper.selectById(currentId.getId());
+            customer.withdraw(serviceObj.getFee());
+        }
         order.setIsCanceled(true);
         order.setCancelTimestamp(System.currentTimeMillis());
         orderMapper.updateById(order);
-        order.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
+        order.setServiceShort(serviceObj);
         order.setState();
         return Result.ok().data("booking_order", orderMapper.selectById(id));
     }
@@ -121,10 +131,27 @@ public class CustomerOrderController {
         if (order == null || !Objects.equals(order.getCustomerId(), currentId.getId())){
             return Result.error().setMessage("The order with the given id does not belong to the user.");
         }
+        if (!order.getIsConfirmed()){
+            return Result.error().setMessage("The order has not been confirmed.");
+        }
+        if (order.getIsRejected()){
+            return Result.error().setMessage("The order has been rejected.");
+        }
+        if (order.getIsCanceled()){
+            return Result.error().setMessage("The order has been canceled.");
+        }
+        if (order.getIsFinished()){
+            return Result.error().setMessage("The order has been finished already.");
+        }
+
+        ServiceObj serviceObj = serviceMapper.selectById(order.getServiceId());
+        ServiceProvider provider = providerMapper.selectById(serviceObj.getProviderId());
+        provider.deposit(serviceObj.getFee());
+        providerMapper.updateById(provider);
         order.setIsFinished(true);
         order.setFinishTimestamp(System.currentTimeMillis());
         orderMapper.updateById(order);
-        order.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
+        order.setServiceShort(serviceObj);
         order.setState();
         return Result.ok().data("booking_order", orderMapper.selectById(id));
     }
@@ -143,10 +170,26 @@ public class CustomerOrderController {
         }
         order.setMark(mark);
         orderMapper.updateById(order);
+        calculateMark(serviceMapper.selectById(order.getServiceId()).getProviderId());
         order.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
         order.setState();
         return Result.ok().data("booking_order", orderMapper.selectById(id));
     }
+
+    private void calculateMark(long id){
+        ServiceProvider provider = providerMapper.selectById(id);
+        MPJLambdaWrapper<BookingOrder> wrapper = new MPJLambdaWrapper<>();
+        wrapper.selectAvg(BookingOrder::getMark)
+                .leftJoin(" service s on s.id = t.service_id")
+                .eq("s.provider_id", id);
+        Double d = orderMapper.selectJoinOne(Double.class, wrapper);
+        System.out.println(d);
+        d = d == null ? 0 : d;
+        provider.setMark(d);
+        providerMapper.updateById(provider);
+    }
+
+
 
     @PutMapping("/create")
     public Result create(
@@ -163,9 +206,17 @@ public class CustomerOrderController {
         if (serviceObj == null){
             return Result.error().setMessage("Invalid id.");
         }
+
+        // Pre-pay the money
+        Customer customer = customerMapper.selectById(currentId.getId());
+        if (serviceObj.getFee() > customer.getBalance()){
+            return Result.error().setMessage("Insufficient balance.");
+        } else {
+            customer.withdraw(serviceObj.getFee());
+        }
+
         BookingOrder order = new BookingOrder();
         order.setCustomerId(currentId.getId());
-        //order.setCreationTimestamp(System.currentTimeMillis());
         order.setServiceId(serviceId);
         order.setStartTimestamp(startTimestamp);
         order.setEndTimestamp(endTimestamp);
@@ -175,5 +226,28 @@ public class CustomerOrderController {
         return Result.ok().data("booking_order", order);
     }
 
+    @GetMapping("/get_by_date")
+    public Result getByDate(
+            @RequestParam Integer day,
+            @RequestParam Integer month,
+            @RequestParam Integer year) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+        Date startDate = sdf.parse(String.format("%4d%2d%2d", year, month, day));
+        Date endDate = sdf.parse(String.format("%4d%2d%2d", year, month, day + 1));
+        long start = startDate.getTime();
+        long end = endDate.getTime();
+        QueryWrapper<BookingOrder> wrapper = new QueryWrapper<>();
+        wrapper.eq("customer_id", currentId.getId())
+                .ge("start_timestamp", start)
+                .lt("start_timestamp", end)
+                .orderByDesc("creation_timestamp");
+
+        List<BookingOrder> list = orderMapper.selectList(wrapper);
+        list.forEach(bookingOrder -> {
+            bookingOrder.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
+            bookingOrder.setState();
+        });
+        return Result.ok().data("booking_orders", list);
+    }
 
 }

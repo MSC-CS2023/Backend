@@ -18,9 +18,21 @@ public abstract class User {
     private String email;
     private String address;
     private String tel;
+    @JsonIgnore
+    private Double balance = 0d;
 
     @JsonIgnore
     private String avatarPath;
     @JsonIgnore
     private Long avatarTimestamp;
+
+    public void deposit(double money){
+        this.balance += money;
+    }
+
+    public void withdraw(double money){
+        if (this.balance > money){
+            this.balance -= money;
+        }
+    }
 }

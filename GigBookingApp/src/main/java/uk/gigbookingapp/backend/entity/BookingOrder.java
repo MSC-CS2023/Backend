@@ -92,6 +92,14 @@ public class BookingOrder {
         setServiceShort(new ServiceShort(serviceObj));
     }
 
+    public void setServiceShort(ServiceObj serviceObj) {
+        setServiceShort(new ServiceShort(serviceObj));
+    }
+
+    private void setServiceShort(ServiceShort serviceShort) {
+        this.serviceShort = serviceShort;
+    }
+
     public void setState(){
         if (isFinished){
             this.state = OrderStateType.FINISHED.toLowerCase();

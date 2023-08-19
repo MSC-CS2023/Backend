@@ -1,8 +1,6 @@
 package uk.gigbookingapp.backend.type;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public enum TagsType {
 //    public static final String CLEANING = "cleaning";

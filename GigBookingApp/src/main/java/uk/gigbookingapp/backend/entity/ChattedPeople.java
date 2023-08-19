@@ -1,12 +1,8 @@
 package uk.gigbookingapp.backend.entity;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import uk.gigbookingapp.backend.mapper.SessionMapper;
 import uk.gigbookingapp.backend.type.UserType;
-
-import java.util.List;
 
 public class ChattedPeople {
     private Long id;

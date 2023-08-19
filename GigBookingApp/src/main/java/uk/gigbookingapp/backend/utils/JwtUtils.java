@@ -9,9 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import uk.gigbookingapp.backend.entity.CurrentId;
 import uk.gigbookingapp.backend.entity.User;
-import uk.gigbookingapp.backend.type.UserType;
 
-import java.net.http.HttpResponse;
 import java.security.Key;
 import java.util.Date;
 import java.util.HashMap;

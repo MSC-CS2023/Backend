@@ -1,6 +1,5 @@
 package uk.gigbookingapp.backend.interceptor;
 
-import io.jsonwebtoken.Claims;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,6 @@ import uk.gigbookingapp.backend.entity.CurrentId;
 import uk.gigbookingapp.backend.mapper.CustomerMapper;
 import uk.gigbookingapp.backend.type.UserType;
 import uk.gigbookingapp.backend.utils.JwtUtils;
-import uk.gigbookingapp.backend.utils.Result;
 
 @Configuration
 public class CustomerInterceptor implements HandlerInterceptor {
