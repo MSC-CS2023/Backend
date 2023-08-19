@@ -1,6 +1,7 @@
 package uk.gigbookingapp.backend.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.github.yulichang.query.MPJQueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import uk.gigbookingapp.backend.entity.*;
@@ -149,7 +150,7 @@ public class CustomerController {
 
     @GetMapping("/get_rec")
     public Result getRec(
-            @RequestParam(required = false, defaultValue = "") Double[] list,
+            @RequestParam(required = false, defaultValue = "") Long[] list,
             @RequestParam(required = false, defaultValue = "10") Integer num){
         if (num < 0){
             return Result.error().setMessage("Invalid value of 'num'.");
@@ -173,22 +174,24 @@ public class CustomerController {
             return Result.ok().setMessage("No nearest user.");
         }
 
-        QueryWrapper<CustomerLog> wrapper = new QueryWrapper<>();
-        wrapper.eq("customer_id", nearestId)
+        MPJQueryWrapper<CustomerLog> wrapper = new MPJQueryWrapper<>();
+        wrapper.select("service_id")
+                .eq("customer_id", nearestId)
                 .notInSql("service_id",
-                        "select service_id where customer_id = " + id)
-                .gt("timestamp", limitTime);
-        for (Double serviceId: list) {
-            wrapper.ne("id", serviceId);
+                        "select service_id and timestamp where customer_id = " + id +
+                        " and timestamp > " + limitTime +
+                        " order by timestamp desc");
+        for (Long serviceId: list) {
+            System.out.println(serviceId);
+            wrapper.ne("service_id", serviceId);
         }
-
-        wrapper.orderByDesc("timestamp")
+        wrapper.distinct()
                 .last("limit " + num);
-        List<CustomerLog> logList = customerLogMapper.selectList(wrapper);
+        List<Long> logList = customerLogMapper.selectJoinList(Long.class, wrapper);
 
         List<ServiceShort> serviceShorts = new ArrayList<>();
-        for (CustomerLog log : logList){
-            ServiceObj serviceObj = serviceMapper.selectById(log.getServiceId());
+        for (Long log : logList){
+            ServiceObj serviceObj = serviceMapper.selectById(log);
             serviceObj.setPictureId(servicePicsMapper);
             serviceObj.setUsername(providerMapper);
             serviceShorts.add(new ServiceShort(serviceObj, providerMapper));
