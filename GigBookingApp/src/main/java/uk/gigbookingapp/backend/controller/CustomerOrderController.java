@@ -9,8 +9,6 @@ import uk.gigbookingapp.backend.mapper.*;
 import uk.gigbookingapp.backend.utils.Result;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -228,14 +226,9 @@ public class CustomerOrderController {
 
     @GetMapping("/get_by_date")
     public Result getByDate(
-            @RequestParam Integer day,
-            @RequestParam Integer month,
-            @RequestParam Integer year) throws ParseException {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
-        Date startDate = sdf.parse(String.format("%4d%2d%2d", year, month, day));
-        Date endDate = sdf.parse(String.format("%4d%2d%2d", year, month, day + 1));
-        long start = startDate.getTime();
-        long end = endDate.getTime();
+            @RequestParam Long timestamp){
+        long start = timestamp;
+        long end = timestamp + 86400 * 1000;
         QueryWrapper<BookingOrder> wrapper = new QueryWrapper<>();
         wrapper.eq("customer_id", currentId.getId())
                 .ge("start_timestamp", start)

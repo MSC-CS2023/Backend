@@ -591,3 +591,4 @@ java.sql.SQLException: Operand should contain 1 column(s)
 19-08-2023 19:40:22.198 +01:00  INFO 2328 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
 19-08-2023 19:40:22.944 +01:00  INFO 2328 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
 19-08-2023 19:40:22.951 +01:00  INFO 2328 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.215 seconds (process running for 2.69)
+19-08-2023 20:05:29.362 +01:00  INFO 2328 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
