@@ -8,10 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import uk.gigbookingapp.backend.entity.BookingOrder;
 import uk.gigbookingapp.backend.entity.CurrentId;
-import uk.gigbookingapp.backend.mapper.BookingOrderMapper;
-import uk.gigbookingapp.backend.mapper.ServiceMapper;
-import uk.gigbookingapp.backend.mapper.ServicePicsMapper;
-import uk.gigbookingapp.backend.mapper.ServiceProviderMapper;
+import uk.gigbookingapp.backend.mapper.*;
 import uk.gigbookingapp.backend.type.OrderStateType;
 import uk.gigbookingapp.backend.type.UserType;
 import uk.gigbookingapp.backend.utils.Result;
@@ -24,7 +21,7 @@ public class GetOrderController {
     @Autowired
     BookingOrderMapper orderMapper;
     @Autowired
-    CustomerController customerController;
+    CustomerMapper customerMapper;
     @Autowired
     ServiceProviderMapper providerMapper;
     @Autowired
@@ -86,7 +83,7 @@ public class GetOrderController {
         List<BookingOrder> list = orderMapper.selectList(wrapper);
         list.forEach(bookingOrder -> {
             bookingOrder.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
-            bookingOrder.setState();
+            bookingOrder.setStateAndAddress(customerMapper);
         });
         return Result.ok().data("booking_orders", list);
     }

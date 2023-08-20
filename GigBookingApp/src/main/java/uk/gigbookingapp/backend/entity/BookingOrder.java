@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import uk.gigbookingapp.backend.mapper.CustomerMapper;
 import uk.gigbookingapp.backend.mapper.ServiceMapper;
 import uk.gigbookingapp.backend.mapper.ServicePicsMapper;
 import uk.gigbookingapp.backend.mapper.ServiceProviderMapper;
@@ -81,6 +82,8 @@ public class BookingOrder {
     private ServiceShort serviceShort;
     @TableField(exist = false)
     private String state;
+    @TableField(exist = false)
+    private String address;
 
     public void setServiceShort(
             ServiceMapper serviceMapper,
@@ -100,7 +103,7 @@ public class BookingOrder {
         this.serviceShort = serviceShort;
     }
 
-    public void setState(){
+    public void setStateAndAddress(CustomerMapper customerMapper){
         if (isFinished){
             this.state = OrderStateType.FINISHED.toLowerCase();
         } else if (isCanceled){
@@ -112,6 +115,8 @@ public class BookingOrder {
         } else {
             this.state = OrderStateType.UNCONFIRMED.toLowerCase();
         }
+
+        this.address = customerMapper.selectById(customerId).getAddress();
     }
 
 }

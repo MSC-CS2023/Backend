@@ -47,7 +47,7 @@ public class ProviderOrderController {
         List<BookingOrder> list = orderMapper.selectList(wrapper);
         list.forEach(bookingOrder -> {
             bookingOrder.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
-            bookingOrder.setState();
+            bookingOrder.setStateAndAddress(customerMapper);
         });
         return Result.ok().data("booking_orders", list);
     }
@@ -63,7 +63,7 @@ public class ProviderOrderController {
             return Result.error().setMessage("The order with the given id does not belong to the user.");
         }
         order.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
-        order.setState();
+        order.setStateAndAddress(customerMapper);
         return Result.ok().data("booking_order", order);
     }
 
@@ -101,7 +101,7 @@ public class ProviderOrderController {
         List<BookingOrder> list = orderMapper.selectList(wrapper);
         list.forEach(bookingOrder -> {
             bookingOrder.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
-            bookingOrder.setState();
+            bookingOrder.setStateAndAddress(customerMapper);
         });
         return Result.ok().data("booking_orders", list);
     }
@@ -126,7 +126,7 @@ public class ProviderOrderController {
         order.setConfirmationTimestamp(System.currentTimeMillis());
         orderMapper.updateById(order);
         order.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
-        order.setState();
+        order.setStateAndAddress(customerMapper);
         return Result.ok().data("booking_order", orderMapper.selectById(id));
     }
 
@@ -156,7 +156,7 @@ public class ProviderOrderController {
         order.setRejectionTimestamp(System.currentTimeMillis());
         orderMapper.updateById(order);
         order.setServiceShort(serviceObj, providerMapper);
-        order.setState();
+        order.setStateAndAddress(customerMapper);
         return Result.ok().data("booking_order", orderMapper.selectById(id));
     }
 
@@ -176,7 +176,7 @@ public class ProviderOrderController {
         List<BookingOrder> list = orderMapper.selectList(wrapper);
         list.forEach(bookingOrder -> {
             bookingOrder.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
-            bookingOrder.setState();
+            bookingOrder.setStateAndAddress(customerMapper);
         });
         return Result.ok().data("booking_orders", list);
     }

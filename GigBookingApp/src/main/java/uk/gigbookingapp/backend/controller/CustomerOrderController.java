@@ -42,7 +42,7 @@ public class CustomerOrderController {
         List<BookingOrder> list = orderMapper.selectList(wrapper);
         list.forEach(bookingOrder -> {
             bookingOrder.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
-            bookingOrder.setState();
+            bookingOrder.setStateAndAddress(customerMapper);
         });
         return Result.ok().data("booking_orders", list);
     }
@@ -57,7 +57,7 @@ public class CustomerOrderController {
             return Result.error().setMessage("The order with the given id does not belong to the user.");
         }
         order.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
-        order.setState();
+        order.setStateAndAddress(customerMapper);
         return Result.ok().data("booking_orders", order);
     }
 
@@ -92,7 +92,7 @@ public class CustomerOrderController {
         List<BookingOrder> list = orderMapper.selectList(wrapper);
         list.forEach(bookingOrder -> {
             bookingOrder.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
-            bookingOrder.setState();
+            bookingOrder.setStateAndAddress(customerMapper);
         });
         return Result.ok().data("booking_order", list);
     }
@@ -119,7 +119,7 @@ public class CustomerOrderController {
         order.setCancelTimestamp(System.currentTimeMillis());
         orderMapper.updateById(order);
         order.setServiceShort(serviceObj, providerMapper);
-        order.setState();
+        order.setStateAndAddress(customerMapper);
         return Result.ok().data("booking_order", orderMapper.selectById(id));
     }
 
@@ -150,7 +150,7 @@ public class CustomerOrderController {
         order.setFinishTimestamp(System.currentTimeMillis());
         orderMapper.updateById(order);
         order.setServiceShort(serviceObj, providerMapper);
-        order.setState();
+        order.setStateAndAddress(customerMapper);
         return Result.ok().data("booking_order", orderMapper.selectById(id));
     }
 
@@ -170,7 +170,7 @@ public class CustomerOrderController {
         orderMapper.updateById(order);
         calculateMark(serviceMapper.selectById(order.getServiceId()).getProviderId());
         order.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
-        order.setState();
+        order.setStateAndAddress(customerMapper);
         return Result.ok().data("booking_order", orderMapper.selectById(id));
     }
 
@@ -222,7 +222,7 @@ public class CustomerOrderController {
         order.setEndTimestamp(endTimestamp);
         orderMapper.insert(order);
         order.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
-        order.setState();
+        order.setStateAndAddress(customerMapper);
         return Result.ok().data("booking_order", order);
     }
 
@@ -240,7 +240,7 @@ public class CustomerOrderController {
         List<BookingOrder> list = orderMapper.selectList(wrapper);
         list.forEach(bookingOrder -> {
             bookingOrder.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
-            bookingOrder.setState();
+            bookingOrder.setStateAndAddress(customerMapper);
         });
         return Result.ok().data("booking_orders", list);
     }
