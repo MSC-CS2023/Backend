@@ -1,0 +1,12 @@
+INSERT INTO `customer_password` (`id`, `password`) VALUES (11, '123abc');
+INSERT INTO `customer_password` (`id`, `password`) VALUES (12, '456abc');
+INSERT INTO `customer_password` (`id`, `password`) VALUES (13, '\"aaa\"');
+INSERT INTO `customer_password` (`id`, `password`) VALUES (654340098, 'alice123');
+INSERT INTO `customer_password` (`id`, `password`) VALUES (1686711327449489410, '123');
+INSERT INTO `customer_password` (`id`, `password`) VALUES (1686711662456938498, '234');
+INSERT INTO `customer_password` (`id`, `password`) VALUES (1686712368517685250, '234');
+INSERT INTO `customer_password` (`id`, `password`) VALUES (1692238137490763777, '123');
+INSERT INTO `customer_password` (`id`, `password`) VALUES (1692240784025284609, '123');
+INSERT INTO `customer_password` (`id`, `password`) VALUES (1692241069376368642, '1234');
+INSERT INTO `customer_password` (`id`, `password`) VALUES (1692470327654756354, '222');
+INSERT INTO `customer_password` (`id`, `password`) VALUES (1692481821024989186, '123');
