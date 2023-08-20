@@ -94,7 +94,7 @@ public class CustomerOrderController {
             bookingOrder.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
             bookingOrder.setState();
         });
-        return Result.ok().data("booking_orders", list);
+        return Result.ok().data("booking_order", list);
     }
 
     @PostMapping("/cancel")
