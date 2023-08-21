@@ -58,7 +58,7 @@ public class CustomerOrderController {
         }
         order.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
         order.setStateAndAddress(customerMapper);
-        return Result.ok().data("booking_orders", order);
+        return Result.ok().data("booking_order", order);
     }
 
     @GetMapping("/advanced")
@@ -94,7 +94,7 @@ public class CustomerOrderController {
             bookingOrder.setServiceShort(serviceMapper, servicePicsMapper, providerMapper);
             bookingOrder.setStateAndAddress(customerMapper);
         });
-        return Result.ok().data("booking_order", list);
+        return Result.ok().data("booking_orders", list);
     }
 
     @PostMapping("/cancel")

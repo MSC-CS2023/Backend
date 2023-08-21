@@ -1,270 +1,63 @@
-19-08-2023 06:31:39.867 +01:00  INFO 8092 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 8092 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
-19-08-2023 06:31:39.875 +01:00  INFO 8092 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
-19-08-2023 06:31:40.930 +01:00  INFO 8092 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-19-08-2023 06:31:40.943 +01:00  INFO 8092 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-19-08-2023 06:31:40.944 +01:00  INFO 8092 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-19-08-2023 06:31:41.049 +01:00  INFO 8092 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-19-08-2023 06:31:41.051 +01:00  INFO 8092 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1115 ms
-19-08-2023 06:31:41.264 +01:00  INFO 8092 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
-19-08-2023 06:31:42.293 +01:00  INFO 8092 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-19-08-2023 06:31:42.303 +01:00  INFO 8092 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.878 seconds (process running for 3.596)
-19-08-2023 06:31:52.737 +01:00  INFO 8092 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-19-08-2023 06:31:52.738 +01:00  INFO 8092 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-19-08-2023 06:31:52.739 +01:00  INFO 8092 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-19-08-2023 06:31:52.835 +01:00  INFO 8092 --- [http-nio-8080-exec-3] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-19-08-2023 06:39:27.600 +01:00  INFO 8092 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-19-08-2023 06:39:27.605 +01:00  INFO 8092 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-19-08-2023 06:39:32.314 +01:00  INFO 2192 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 2192 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
-19-08-2023 06:39:32.315 +01:00  INFO 2192 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
-19-08-2023 06:39:33.206 +01:00  INFO 2192 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-19-08-2023 06:39:33.214 +01:00  INFO 2192 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-19-08-2023 06:39:33.214 +01:00  INFO 2192 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-19-08-2023 06:39:33.287 +01:00  INFO 2192 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-19-08-2023 06:39:33.288 +01:00  INFO 2192 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 923 ms
-19-08-2023 06:39:33.432 +01:00  INFO 2192 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
-19-08-2023 06:39:34.211 +01:00  INFO 2192 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-19-08-2023 06:39:34.219 +01:00  INFO 2192 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.307 seconds (process running for 2.799)
-19-08-2023 06:39:51.110 +01:00  INFO 2192 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-19-08-2023 06:39:51.110 +01:00  INFO 2192 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-19-08-2023 06:39:51.111 +01:00  INFO 2192 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-19-08-2023 06:39:51.247 +01:00  INFO 2192 --- [http-nio-8080-exec-2] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-19-08-2023 07:21:06.426 +01:00  INFO 2192 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-19-08-2023 07:21:06.443 +01:00  INFO 2192 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-19-08-2023 07:21:10.949 +01:00  INFO 20872 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 20872 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
-19-08-2023 07:21:10.952 +01:00  INFO 20872 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
-19-08-2023 07:21:12.059 +01:00  INFO 20872 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-19-08-2023 07:21:12.067 +01:00  INFO 20872 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-19-08-2023 07:21:12.067 +01:00  INFO 20872 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-19-08-2023 07:21:12.140 +01:00  INFO 20872 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-19-08-2023 07:21:12.140 +01:00  INFO 20872 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1142 ms
-19-08-2023 07:21:12.325 +01:00  INFO 20872 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
-19-08-2023 07:21:13.150 +01:00  INFO 20872 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-19-08-2023 07:21:13.157 +01:00  INFO 20872 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.726 seconds (process running for 3.324)
-19-08-2023 07:22:24.823 +01:00  INFO 20872 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
-19-08-2023 07:22:28.190 +01:00  INFO 9008 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 9008 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
-19-08-2023 07:22:28.192 +01:00  INFO 9008 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
-19-08-2023 07:22:29.070 +01:00  INFO 9008 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-19-08-2023 07:22:29.077 +01:00  INFO 9008 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-19-08-2023 07:22:29.078 +01:00  INFO 9008 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-19-08-2023 07:22:29.145 +01:00  INFO 9008 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-19-08-2023 07:22:29.145 +01:00  INFO 9008 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 906 ms
-19-08-2023 07:22:29.291 +01:00  INFO 9008 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
-19-08-2023 07:22:30.034 +01:00  INFO 9008 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-19-08-2023 07:22:30.040 +01:00  INFO 9008 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.248 seconds (process running for 2.733)
-19-08-2023 07:24:33.839 +01:00  INFO 9008 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
-19-08-2023 07:24:37.216 +01:00  INFO 6544 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 6544 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
-19-08-2023 07:24:37.217 +01:00  INFO 6544 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
-19-08-2023 07:24:38.212 +01:00  INFO 6544 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-19-08-2023 07:24:38.219 +01:00  INFO 6544 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-19-08-2023 07:24:38.219 +01:00  INFO 6544 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-19-08-2023 07:24:38.290 +01:00  INFO 6544 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-19-08-2023 07:24:38.291 +01:00  INFO 6544 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1024 ms
-19-08-2023 07:24:38.459 +01:00  INFO 6544 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
-19-08-2023 07:24:39.260 +01:00  INFO 6544 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-19-08-2023 07:24:39.269 +01:00  INFO 6544 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.462 seconds (process running for 2.941)
-19-08-2023 07:24:53.265 +01:00  INFO 6544 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-19-08-2023 07:24:53.266 +01:00  INFO 6544 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-19-08-2023 07:24:53.267 +01:00  INFO 6544 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-19-08-2023 07:24:53.430 +01:00  INFO 6544 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-19-08-2023 07:35:04.701 +01:00  INFO 6544 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-19-08-2023 07:35:04.705 +01:00  INFO 6544 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-19-08-2023 07:35:08.386 +01:00  INFO 2444 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 2444 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
-19-08-2023 07:35:08.388 +01:00  INFO 2444 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
-19-08-2023 07:35:09.300 +01:00  INFO 2444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-19-08-2023 07:35:09.309 +01:00  INFO 2444 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-19-08-2023 07:35:09.310 +01:00  INFO 2444 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-19-08-2023 07:35:09.391 +01:00  INFO 2444 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-19-08-2023 07:35:09.391 +01:00  INFO 2444 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 950 ms
-19-08-2023 07:35:09.557 +01:00  INFO 2444 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
-19-08-2023 07:35:10.335 +01:00  INFO 2444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-19-08-2023 07:35:10.343 +01:00  INFO 2444 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.354 seconds (process running for 2.875)
-19-08-2023 07:35:24.958 +01:00  INFO 2444 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
-19-08-2023 16:02:26.074 +01:00  INFO 9020 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 9020 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
-19-08-2023 16:02:26.076 +01:00  INFO 9020 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
-19-08-2023 16:02:27.122 +01:00  INFO 9020 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-19-08-2023 16:02:27.131 +01:00  INFO 9020 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-19-08-2023 16:02:27.131 +01:00  INFO 9020 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-19-08-2023 16:02:27.208 +01:00  INFO 9020 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-19-08-2023 16:02:27.208 +01:00  INFO 9020 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1085 ms
-19-08-2023 16:02:27.382 +01:00  INFO 9020 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
-19-08-2023 16:02:28.191 +01:00  INFO 9020 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-19-08-2023 16:02:28.199 +01:00  INFO 9020 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.572 seconds (process running for 3.152)
-19-08-2023 16:07:05.037 +01:00  INFO 9020 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
-19-08-2023 16:27:57.997 +01:00  INFO 15316 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 15316 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
-19-08-2023 16:27:58.004 +01:00  INFO 15316 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
-19-08-2023 16:27:58.875 +01:00  INFO 15316 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-19-08-2023 16:27:58.881 +01:00  INFO 15316 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-19-08-2023 16:27:58.881 +01:00  INFO 15316 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-19-08-2023 16:27:58.946 +01:00  INFO 15316 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-19-08-2023 16:27:58.946 +01:00  INFO 15316 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 901 ms
-19-08-2023 16:27:59.096 +01:00  INFO 15316 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
-19-08-2023 16:27:59.940 +01:00  INFO 15316 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-19-08-2023 16:27:59.949 +01:00  INFO 15316 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.357 seconds (process running for 2.836)
-19-08-2023 16:28:17.058 +01:00  INFO 15316 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-19-08-2023 16:28:17.058 +01:00  INFO 15316 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-19-08-2023 16:28:17.059 +01:00  INFO 15316 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-19-08-2023 16:28:17.202 +01:00  INFO 15316 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-19-08-2023 16:58:31.827 +01:00  INFO 15316 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-19-08-2023 16:58:31.830 +01:00  INFO 15316 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-19-08-2023 16:58:35.993 +01:00  INFO 14448 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 14448 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
-19-08-2023 16:58:36.001 +01:00  INFO 14448 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
-19-08-2023 16:58:36.966 +01:00  INFO 14448 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-19-08-2023 16:58:36.978 +01:00  INFO 14448 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-19-08-2023 16:58:36.978 +01:00  INFO 14448 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-19-08-2023 16:58:37.054 +01:00  INFO 14448 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-19-08-2023 16:58:37.054 +01:00  INFO 14448 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 995 ms
-19-08-2023 16:58:37.213 +01:00  INFO 14448 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
-19-08-2023 16:58:38.069 +01:00  INFO 14448 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-19-08-2023 16:58:38.077 +01:00  INFO 14448 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.526 seconds (process running for 3.077)
-19-08-2023 17:06:25.377 +01:00  INFO 14448 --- [http-nio-8080-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-19-08-2023 17:06:25.377 +01:00  INFO 14448 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-19-08-2023 17:06:25.378 +01:00  INFO 14448 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-19-08-2023 17:06:25.471 +01:00  INFO 14448 --- [http-nio-8080-exec-4] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-19-08-2023 18:56:23.311 +01:00  INFO 14448 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-19-08-2023 18:56:23.312 +01:00  INFO 14448 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-19-08-2023 19:07:29.602 +01:00  INFO 18472 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 18472 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
-19-08-2023 19:07:29.605 +01:00  INFO 18472 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
-19-08-2023 19:07:30.646 +01:00  INFO 18472 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-19-08-2023 19:07:30.654 +01:00  INFO 18472 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-19-08-2023 19:07:30.654 +01:00  INFO 18472 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-19-08-2023 19:07:30.738 +01:00  INFO 18472 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-19-08-2023 19:07:30.738 +01:00  INFO 18472 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1091 ms
-19-08-2023 19:07:30.918 +01:00  INFO 18472 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
-19-08-2023 19:07:31.808 +01:00  INFO 18472 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-19-08-2023 19:07:31.820 +01:00  INFO 18472 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.685 seconds (process running for 3.349)
-19-08-2023 19:07:41.075 +01:00  INFO 18472 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-19-08-2023 19:07:41.076 +01:00  INFO 18472 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-19-08-2023 19:07:41.076 +01:00  INFO 18472 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-19-08-2023 19:07:41.186 +01:00  INFO 18472 --- [http-nio-8080-exec-2] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-19-08-2023 19:11:52.336 +01:00  INFO 18472 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-19-08-2023 19:11:52.340 +01:00  INFO 18472 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-19-08-2023 19:11:55.806 +01:00  INFO 11740 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 11740 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
-19-08-2023 19:11:55.809 +01:00  INFO 11740 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
-19-08-2023 19:11:56.839 +01:00  INFO 11740 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-19-08-2023 19:11:56.847 +01:00  INFO 11740 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-19-08-2023 19:11:56.847 +01:00  INFO 11740 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-19-08-2023 19:11:56.925 +01:00  INFO 11740 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-19-08-2023 19:11:56.925 +01:00  INFO 11740 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1070 ms
-19-08-2023 19:11:57.098 +01:00  INFO 11740 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
-19-08-2023 19:11:57.856 +01:00  INFO 11740 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-19-08-2023 19:11:57.862 +01:00  INFO 11740 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.452 seconds (process running for 2.919)
-19-08-2023 19:11:59.431 +01:00  INFO 11740 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-19-08-2023 19:11:59.431 +01:00  INFO 11740 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-19-08-2023 19:11:59.432 +01:00  INFO 11740 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-19-08-2023 19:11:59.514 +01:00  INFO 11740 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-19-08-2023 19:15:10.897 +01:00  INFO 11740 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-19-08-2023 19:15:10.901 +01:00  INFO 11740 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-19-08-2023 19:15:12.513 +01:00  INFO 18584 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 18584 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
-19-08-2023 19:15:12.515 +01:00  INFO 18584 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
-19-08-2023 19:15:13.463 +01:00  INFO 18584 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-19-08-2023 19:15:13.469 +01:00  INFO 18584 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-19-08-2023 19:15:13.470 +01:00  INFO 18584 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-19-08-2023 19:15:13.534 +01:00  INFO 18584 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-19-08-2023 19:15:13.534 +01:00  INFO 18584 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 976 ms
-19-08-2023 19:15:13.686 +01:00  INFO 18584 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
-19-08-2023 19:15:14.448 +01:00  INFO 18584 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-19-08-2023 19:15:14.454 +01:00  INFO 18584 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.355 seconds (process running for 2.829)
-19-08-2023 19:15:28.168 +01:00  INFO 18584 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
-19-08-2023 19:15:31.464 +01:00  INFO 18940 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 18940 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
-19-08-2023 19:15:31.466 +01:00  INFO 18940 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
-19-08-2023 19:15:32.354 +01:00  INFO 18940 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-19-08-2023 19:15:32.361 +01:00  INFO 18940 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-19-08-2023 19:15:32.361 +01:00  INFO 18940 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-19-08-2023 19:15:32.427 +01:00  INFO 18940 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-19-08-2023 19:15:32.427 +01:00  INFO 18940 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 914 ms
-19-08-2023 19:15:32.571 +01:00  INFO 18940 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
-19-08-2023 19:15:33.325 +01:00  INFO 18940 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-19-08-2023 19:15:33.334 +01:00  INFO 18940 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.272 seconds (process running for 2.737)
-19-08-2023 19:15:35.849 +01:00  INFO 18940 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-19-08-2023 19:15:35.849 +01:00  INFO 18940 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-19-08-2023 19:15:35.850 +01:00  INFO 18940 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-19-08-2023 19:15:35.941 +01:00  INFO 18940 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-19-08-2023 19:16:15.860 +01:00  INFO 18940 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-19-08-2023 19:16:15.863 +01:00  INFO 18940 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-19-08-2023 19:16:19.255 +01:00  INFO 17768 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 17768 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
-19-08-2023 19:16:19.257 +01:00  INFO 17768 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
-19-08-2023 19:16:20.132 +01:00  INFO 17768 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-19-08-2023 19:16:20.138 +01:00  INFO 17768 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-19-08-2023 19:16:20.139 +01:00  INFO 17768 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-19-08-2023 19:16:20.202 +01:00  INFO 17768 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-19-08-2023 19:16:20.202 +01:00  INFO 17768 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 895 ms
-19-08-2023 19:16:20.349 +01:00  INFO 17768 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
-19-08-2023 19:16:21.093 +01:00  INFO 17768 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-19-08-2023 19:16:21.100 +01:00  INFO 17768 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.248 seconds (process running for 2.714)
-19-08-2023 19:16:27.114 +01:00  INFO 17768 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-19-08-2023 19:16:27.114 +01:00  INFO 17768 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-19-08-2023 19:16:27.115 +01:00  INFO 17768 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-19-08-2023 19:16:27.198 +01:00  INFO 17768 --- [http-nio-8080-exec-3] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-19-08-2023 19:21:16.947 +01:00  INFO 17768 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-19-08-2023 19:21:16.950 +01:00  INFO 17768 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-19-08-2023 19:21:20.255 +01:00  INFO 3768 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 3768 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
-19-08-2023 19:21:20.257 +01:00  INFO 3768 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
-19-08-2023 19:21:21.127 +01:00  INFO 3768 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-19-08-2023 19:21:21.133 +01:00  INFO 3768 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-19-08-2023 19:21:21.134 +01:00  INFO 3768 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-19-08-2023 19:21:21.201 +01:00  INFO 3768 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-19-08-2023 19:21:21.201 +01:00  INFO 3768 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 900 ms
-19-08-2023 19:21:21.344 +01:00  INFO 3768 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
-19-08-2023 19:21:22.283 +01:00  INFO 3768 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-19-08-2023 19:21:22.290 +01:00  INFO 3768 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.436 seconds (process running for 2.901)
-19-08-2023 19:21:28.200 +01:00  INFO 3768 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-19-08-2023 19:21:28.201 +01:00  INFO 3768 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-19-08-2023 19:21:28.201 +01:00  INFO 3768 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-19-08-2023 19:21:28.286 +01:00  INFO 3768 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-19-08-2023 19:21:28.625 +01:00 ERROR 3768 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'gigbookingapp.customer_log.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
-### The error may exist in uk/gigbookingapp/backend/mapper/CustomerLogMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT    id,customer_id,service_id,timestamp    FROM   customer_log        WHERE (customer_id = ? AND service_id NOT IN (select service_id where customer_id = 1692481821024989186) AND timestamp > ?) GROUP BY service_id ORDER BY timestamp DESC limit 10
-### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'gigbookingapp.customer_log.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
-; bad SQL grammar []] with root cause
+21-08-2023 00:03:00.158 +01:00  WARN 5020 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:04:05.029 +01:00  WARN 5020 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:04:06.146 +01:00  WARN 5020 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:04:09.440 +01:00  WARN 5020 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:04:10.908 +01:00  WARN 5020 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:04:14.052 +01:00  WARN 5020 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:04:15.149 +01:00  WARN 5020 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:04:17.022 +01:00  WARN 5020 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:04:20.279 +01:00  WARN 5020 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:04:24.089 +01:00  WARN 5020 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:04:24.689 +01:00  WARN 5020 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:05:02.490 +01:00  WARN 5020 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:05:03.567 +01:00  WARN 5020 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:05:06.161 +01:00  WARN 5020 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:05:08.101 +01:00  WARN 5020 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:05:13.074 +01:00  WARN 5020 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:05:13.704 +01:00  WARN 5020 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:05:13.925 +01:00  WARN 5020 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:05:14.062 +01:00  WARN 5020 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:05:15.563 +01:00  WARN 5020 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:05:18.983 +01:00  WARN 5020 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:11:28.210 +01:00  WARN 5020 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:11:31.181 +01:00  WARN 5020 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:11:32.806 +01:00  WARN 5020 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:11:33.902 +01:00  WARN 5020 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:11:38.165 +01:00  WARN 5020 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:11:57.104 +01:00  WARN 5020 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:07.740 +01:00  WARN 5020 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:08.528 +01:00  WARN 5020 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:09.229 +01:00  WARN 5020 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:09.554 +01:00  WARN 5020 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:10.820 +01:00  WARN 5020 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:12.446 +01:00  WARN 5020 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:12.669 +01:00  WARN 5020 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:12.669 +01:00  WARN 5020 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:12.793 +01:00  WARN 5020 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:13.050 +01:00  WARN 5020 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:17.175 +01:00  WARN 5020 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:18.940 +01:00  WARN 5020 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:19.846 +01:00  WARN 5020 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:20.136 +01:00  WARN 5020 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:20.351 +01:00  WARN 5020 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:20.478 +01:00  WARN 5020 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:20.611 +01:00  WARN 5020 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:22.235 +01:00  WARN 5020 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:23.975 +01:00  WARN 5020 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:27.713 +01:00  WARN 5020 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:28.496 +01:00  WARN 5020 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:28.547 +01:00  WARN 5020 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:29.251 +01:00  WARN 5020 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:30.202 +01:00  WARN 5020 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:31.922 +01:00  WARN 5020 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:32.050 +01:00  WARN 5020 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:32.154 +01:00  WARN 5020 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:32.282 +01:00 ERROR 5020 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "uk.gigbookingapp.backend.entity.User.getAvatarPath()" because "user" is null] with root cause
 
-java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'gigbookingapp.customer_log.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:483) ~[druid-1.2.18.jar:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58) ~[mybatis-3.5.13.jar:3.5.13]
-	at jdk.proxy3/jdk.proxy3.$Proxy94.execute(Unknown Source) ~[na:na]
-	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:333) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:90) ~[mybatis-3.5.13.jar:3.5.13]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49) ~[mybatis-3.5.13.jar:3.5.13]
-	at com.github.yulichang.interceptor.MPJInterceptor.intercept(MPJInterceptor.java:76) ~[mybatis-plus-join-core-1.4.5.jar:na]
-	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59) ~[mybatis-3.5.13.jar:3.5.13]
-	at jdk.proxy2/jdk.proxy2.$Proxy92.query(Unknown Source) ~[na:na]
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142) ~[mybatis-3.5.13.jar:3.5.13]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425) ~[mybatis-spring-3.0.2.jar:3.0.2]
-	at jdk.proxy2/jdk.proxy2.$Proxy65.selectList(Unknown Source) ~[na:na]
-	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224) ~[mybatis-spring-3.0.2.jar:3.0.2]
-	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:166) ~[mybatis-plus-core-3.5.3.1.jar:3.5.3.1]
-	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77) ~[mybatis-plus-core-3.5.3.1.jar:3.5.3.1]
-	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148) ~[mybatis-plus-core-3.5.3.1.jar:3.5.3.1]
-	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89) ~[mybatis-plus-core-3.5.3.1.jar:3.5.3.1]
-	at jdk.proxy2/jdk.proxy2.$Proxy77.selectList(Unknown Source) ~[na:na]
-	at uk.gigbookingapp.backend.controller.CustomerController.getRec(CustomerController.java:189) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+java.lang.NullPointerException: Cannot invoke "uk.gigbookingapp.backend.entity.User.getAvatarPath()" because "user" is null
+	at uk.gigbookingapp.backend.controller.MainController.sendAvatar(MainController.java:42) ~[classes/:na]
+	at uk.gigbookingapp.backend.controller.PublicUserController.getAvatar(PublicUserController.java:51) ~[classes/:na]
+	at jdk.internal.reflect.GeneratedMethodAccessor61.invoke(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207) ~[spring-web-6.0.10.jar:6.0.10]
@@ -314,76 +107,73 @@ java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP B
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.10.jar:10.1.10]
 	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
 
-19-08-2023 19:26:39.981 +01:00  INFO 3768 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-19-08-2023 19:26:39.984 +01:00  INFO 3768 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-19-08-2023 19:26:43.427 +01:00  INFO 19848 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 19848 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
-19-08-2023 19:26:43.429 +01:00  INFO 19848 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
-19-08-2023 19:26:44.348 +01:00  INFO 19848 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-19-08-2023 19:26:44.354 +01:00  INFO 19848 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-19-08-2023 19:26:44.354 +01:00  INFO 19848 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-19-08-2023 19:26:44.429 +01:00  INFO 19848 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-19-08-2023 19:26:44.429 +01:00  INFO 19848 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 955 ms
-19-08-2023 19:26:44.582 +01:00  INFO 19848 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
-19-08-2023 19:26:45.344 +01:00  INFO 19848 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-19-08-2023 19:26:45.352 +01:00  INFO 19848 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.35 seconds (process running for 2.821)
-19-08-2023 19:26:46.862 +01:00  INFO 19848 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-19-08-2023 19:26:46.862 +01:00  INFO 19848 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-19-08-2023 19:26:46.863 +01:00  INFO 19848 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-19-08-2023 19:26:46.945 +01:00  INFO 19848 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-19-08-2023 19:26:47.286 +01:00 ERROR 19848 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.jdbc.UncategorizedSQLException: 
-### Error querying database.  Cause: java.sql.SQLException: Expression #1 of ORDER BY clause is not in SELECT list, references column 'gigbookingapp.t.timestamp' which is not in SELECT list; this is incompatible with DISTINCT
-### The error may exist in uk/gigbookingapp/backend/mapper/CustomerLogMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT  DISTINCT    service_id   FROM customer_log  t        WHERE   (customer_id = ? AND service_id NOT IN (select service_id where customer_id = 1692481821024989186) AND timestamp > ?) ORDER BY timestamp DESC limit 10
-### Cause: java.sql.SQLException: Expression #1 of ORDER BY clause is not in SELECT list, references column 'gigbookingapp.t.timestamp' which is not in SELECT list; this is incompatible with DISTINCT
-; uncategorized SQLException; SQL state [HY000]; error code [3065]; Expression #1 of ORDER BY clause is not in SELECT list, references column 'gigbookingapp.t.timestamp' which is not in SELECT list; this is incompatible with DISTINCT] with root cause
+21-08-2023 00:12:32.320 +01:00  WARN 5020 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:32.375 +01:00  WARN 5020 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:35.179 +01:00  WARN 5020 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:38.661 +01:00  WARN 5020 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:40.263 +01:00  WARN 5020 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:41.347 +01:00  WARN 5020 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:42.014 +01:00  WARN 5020 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:42.566 +01:00  WARN 5020 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:43.698 +01:00  WARN 5020 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:44.296 +01:00  WARN 5020 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:44.824 +01:00  WARN 5020 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:45.392 +01:00  WARN 5020 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:45.944 +01:00  WARN 5020 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:46.826 +01:00  WARN 5020 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:47.264 +01:00  WARN 5020 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:47.955 +01:00  WARN 5020 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:48.379 +01:00  WARN 5020 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:50.253 +01:00  WARN 5020 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:50.863 +01:00  WARN 5020 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:51.333 +01:00  WARN 5020 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:51.938 +01:00  WARN 5020 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:52.755 +01:00  WARN 5020 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:53.580 +01:00  WARN 5020 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:54.223 +01:00  WARN 5020 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:54.648 +01:00  WARN 5020 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:12:56.437 +01:00  WARN 5020 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:13:00.704 +01:00  WARN 5020 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:13:02.384 +01:00  WARN 5020 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:13:05.759 +01:00  WARN 5020 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:13:06.424 +01:00  WARN 5020 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:13:07.290 +01:00  WARN 5020 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:13:07.827 +01:00  WARN 5020 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:13:08.534 +01:00  WARN 5020 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:13:09.421 +01:00  WARN 5020 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:13:09.994 +01:00  WARN 5020 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:13:12.067 +01:00  WARN 5020 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:13:12.309 +01:00  WARN 5020 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:13:12.429 +01:00  WARN 5020 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:13:15.532 +01:00  WARN 5020 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:13:17.428 +01:00  WARN 5020 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:13:19.733 +01:00  WARN 5020 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:13:21.503 +01:00  WARN 5020 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:13:22.807 +01:00  WARN 5020 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:13:23.101 +01:00  WARN 5020 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:13:24.242 +01:00  WARN 5020 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:13:25.117 +01:00  WARN 5020 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:13:28.853 +01:00  WARN 5020 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:13:29.731 +01:00  WARN 5020 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:13:44.002 +01:00  WARN 5020 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:13:51.476 +01:00  WARN 5020 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:13:56.764 +01:00  WARN 5020 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:13:58.000 +01:00  WARN 5020 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:14:06.785 +01:00  WARN 5020 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:14:07.524 +01:00  WARN 5020 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:14:08.693 +01:00  WARN 5020 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:14:10.786 +01:00  WARN 5020 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:14:16.778 +01:00  WARN 5020 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:14:16.932 +01:00  WARN 5020 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:14:17.297 +01:00  WARN 5020 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:14:17.498 +01:00  WARN 5020 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:14:17.539 +01:00  WARN 5020 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:14:17.586 +01:00 ERROR 5020 --- [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "uk.gigbookingapp.backend.entity.User.getAvatarPath()" because "user" is null] with root cause
 
-java.sql.SQLException: Expression #1 of ORDER BY clause is not in SELECT list, references column 'gigbookingapp.t.timestamp' which is not in SELECT list; this is incompatible with DISTINCT
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:483) ~[druid-1.2.18.jar:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58) ~[mybatis-3.5.13.jar:3.5.13]
-	at jdk.proxy3/jdk.proxy3.$Proxy94.execute(Unknown Source) ~[na:na]
-	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:333) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:90) ~[mybatis-3.5.13.jar:3.5.13]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49) ~[mybatis-3.5.13.jar:3.5.13]
-	at com.github.yulichang.interceptor.MPJInterceptor.intercept(MPJInterceptor.java:76) ~[mybatis-plus-join-core-1.4.5.jar:na]
-	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59) ~[mybatis-3.5.13.jar:3.5.13]
-	at jdk.proxy2/jdk.proxy2.$Proxy92.query(Unknown Source) ~[na:na]
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142) ~[mybatis-3.5.13.jar:3.5.13]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425) ~[mybatis-spring-3.0.2.jar:3.0.2]
-	at jdk.proxy2/jdk.proxy2.$Proxy65.selectList(Unknown Source) ~[na:na]
-	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224) ~[mybatis-spring-3.0.2.jar:3.0.2]
-	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:166) ~[mybatis-plus-core-3.5.3.1.jar:3.5.3.1]
-	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77) ~[mybatis-plus-core-3.5.3.1.jar:3.5.3.1]
-	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148) ~[mybatis-plus-core-3.5.3.1.jar:3.5.3.1]
-	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89) ~[mybatis-plus-core-3.5.3.1.jar:3.5.3.1]
-	at jdk.proxy2/jdk.proxy2.$Proxy77.selectJoinList(Unknown Source) ~[na:na]
-	at uk.gigbookingapp.backend.controller.CustomerController.getRec(CustomerController.java:190) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+java.lang.NullPointerException: Cannot invoke "uk.gigbookingapp.backend.entity.User.getAvatarPath()" because "user" is null
+	at uk.gigbookingapp.backend.controller.MainController.sendAvatar(MainController.java:42) ~[classes/:na]
+	at uk.gigbookingapp.backend.controller.PublicUserController.getAvatar(PublicUserController.java:51) ~[classes/:na]
+	at jdk.internal.reflect.GeneratedMethodAccessor61.invoke(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207) ~[spring-web-6.0.10.jar:6.0.10]
@@ -433,87 +223,148 @@ java.sql.SQLException: Expression #1 of ORDER BY clause is not in SELECT list, r
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.10.jar:10.1.10]
 	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
 
-19-08-2023 19:33:56.052 +01:00  INFO 19848 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-19-08-2023 19:33:56.056 +01:00  INFO 19848 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-19-08-2023 19:33:59.913 +01:00  INFO 3704 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 3704 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
-19-08-2023 19:33:59.915 +01:00  INFO 3704 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
-19-08-2023 19:34:00.845 +01:00  INFO 3704 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-19-08-2023 19:34:00.850 +01:00  INFO 3704 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-19-08-2023 19:34:00.850 +01:00  INFO 3704 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-19-08-2023 19:34:00.912 +01:00  INFO 3704 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-19-08-2023 19:34:00.912 +01:00  INFO 3704 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 953 ms
-19-08-2023 19:34:01.056 +01:00  INFO 3704 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
-19-08-2023 19:34:01.789 +01:00  INFO 3704 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-19-08-2023 19:34:01.796 +01:00  INFO 3704 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.271 seconds (process running for 2.731)
-19-08-2023 19:35:00.013 +01:00  INFO 3704 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
-19-08-2023 19:35:03.365 +01:00  INFO 14000 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 14000 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
-19-08-2023 19:35:03.368 +01:00  INFO 14000 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
-19-08-2023 19:35:04.251 +01:00  INFO 14000 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-19-08-2023 19:35:04.258 +01:00  INFO 14000 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-19-08-2023 19:35:04.258 +01:00  INFO 14000 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-19-08-2023 19:35:04.322 +01:00  INFO 14000 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-19-08-2023 19:35:04.322 +01:00  INFO 14000 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 901 ms
-19-08-2023 19:35:04.469 +01:00  INFO 14000 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
-19-08-2023 19:35:05.297 +01:00  INFO 14000 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-19-08-2023 19:35:05.305 +01:00  INFO 14000 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.353 seconds (process running for 2.841)
-19-08-2023 19:35:07.001 +01:00  INFO 14000 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-19-08-2023 19:35:07.001 +01:00  INFO 14000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-19-08-2023 19:35:07.002 +01:00  INFO 14000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-19-08-2023 19:35:07.087 +01:00  INFO 14000 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-19-08-2023 19:35:07.445 +01:00 ERROR 14000 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLException: Operand should contain 1 column(s)
-### The error may exist in uk/gigbookingapp/backend/mapper/CustomerLogMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT  DISTINCT    service_id   FROM customer_log  t        WHERE   (customer_id = ? AND service_id NOT IN (select service_id, timestamp where customer_id = 1692481821024989186 and timestamp > 1691606107349 order by timestamp desc)) limit 10
-### Cause: java.sql.SQLException: Operand should contain 1 column(s)
-; bad SQL grammar []] with root cause
+21-08-2023 00:14:17.769 +01:00  WARN 5020 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:14:17.846 +01:00  WARN 5020 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:14:18.367 +01:00  WARN 5020 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:14:20.230 +01:00  WARN 5020 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:14:21.669 +01:00  WARN 5020 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:14:22.517 +01:00  WARN 5020 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:14:24.242 +01:00  WARN 5020 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:15:55.637 +01:00  WARN 5020 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:16:01.294 +01:00  WARN 5020 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:16:02.867 +01:00  WARN 5020 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:16:06.091 +01:00  WARN 5020 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:16:09.035 +01:00  WARN 5020 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:16:49.038 +01:00  WARN 5020 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:16:59.360 +01:00  WARN 5020 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:16:59.599 +01:00  WARN 5020 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:17:02.011 +01:00  WARN 5020 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 00:20:50.507 +01:00  INFO 5020 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+21-08-2023 00:20:50.523 +01:00  INFO 5020 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+21-08-2023 13:02:12.761 +01:00  INFO 18952 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 18952 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
+21-08-2023 13:02:12.763 +01:00  INFO 18952 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
+21-08-2023 13:02:13.861 +01:00  INFO 18952 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+21-08-2023 13:02:13.869 +01:00  INFO 18952 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+21-08-2023 13:02:13.870 +01:00  INFO 18952 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+21-08-2023 13:02:13.938 +01:00  INFO 18952 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+21-08-2023 13:02:13.939 +01:00  INFO 18952 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1125 ms
+21-08-2023 13:02:14.143 +01:00  INFO 18952 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
+21-08-2023 13:02:15.035 +01:00  INFO 18952 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+21-08-2023 13:02:15.044 +01:00  INFO 18952 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.732 seconds (process running for 3.477)
+21-08-2023 13:02:26.346 +01:00  INFO 18952 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+21-08-2023 13:02:26.346 +01:00  INFO 18952 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+21-08-2023 13:02:26.346 +01:00  INFO 18952 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+21-08-2023 13:02:26.446 +01:00  INFO 18952 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+21-08-2023 14:48:17.190 +01:00  WARN 18952 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 14:48:20.112 +01:00  WARN 18952 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:06:06.045 +01:00  WARN 18952 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:06:06.125 +01:00  WARN 18952 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:06:10.653 +01:00  WARN 18952 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:08:56.996 +01:00  WARN 18952 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:08:58.103 +01:00  WARN 18952 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:08:58.162 +01:00  WARN 18952 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:09:03.288 +01:00  WARN 18952 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:16:25.741 +01:00  WARN 18952 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:17:21.681 +01:00  WARN 18952 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:17:21.739 +01:00  WARN 18952 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:17:23.748 +01:00  WARN 18952 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:17:23.780 +01:00  WARN 18952 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:17:26.050 +01:00  WARN 18952 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:17:26.080 +01:00  WARN 18952 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:17:32.898 +01:00  WARN 18952 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:17:32.930 +01:00  WARN 18952 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:17:34.015 +01:00  WARN 18952 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:17:36.934 +01:00  WARN 18952 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:17:37.031 +01:00  WARN 18952 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:17:38.448 +01:00  WARN 18952 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:17:49.832 +01:00  WARN 18952 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:18:54.563 +01:00  WARN 18952 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:24:12.456 +01:00  WARN 18952 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:25:19.249 +01:00  WARN 18952 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:25:19.319 +01:00  WARN 18952 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:27:30.408 +01:00  WARN 18952 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:27:31.596 +01:00  WARN 18952 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:27:31.631 +01:00  WARN 18952 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:27:31.675 +01:00  WARN 18952 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:27:31.737 +01:00  WARN 18952 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:27:31.771 +01:00  WARN 18952 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:27:31.807 +01:00  WARN 18952 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:27:31.870 +01:00  WARN 18952 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:27:31.900 +01:00  WARN 18952 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:27:31.933 +01:00  WARN 18952 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:27:31.965 +01:00  WARN 18952 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:27:32.000 +01:00  WARN 18952 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:27:32.036 +01:00  WARN 18952 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:27:32.068 +01:00  WARN 18952 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:27:32.099 +01:00  WARN 18952 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:27:32.151 +01:00  WARN 18952 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:27:32.190 +01:00  WARN 18952 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:27:33.759 +01:00  WARN 18952 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:27:33.806 +01:00  WARN 18952 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:27:33.877 +01:00  WARN 18952 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:27:33.920 +01:00  WARN 18952 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:27:33.967 +01:00  WARN 18952 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:27:34.014 +01:00  WARN 18952 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:28:44.109 +01:00  WARN 18952 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:31:15.975 +01:00  WARN 18952 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:31:16.010 +01:00  WARN 18952 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:32:08.433 +01:00  WARN 18952 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:32:08.482 +01:00  WARN 18952 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:33:16.538 +01:00  WARN 18952 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:33:16.626 +01:00  WARN 18952 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:33:16.710 +01:00  WARN 18952 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:33:18.268 +01:00  WARN 18952 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:33:18.301 +01:00  WARN 18952 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:33:18.351 +01:00  WARN 18952 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:33:18.383 +01:00  WARN 18952 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:33:18.822 +01:00  WARN 18952 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:33:18.850 +01:00  WARN 18952 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:33:18.884 +01:00  WARN 18952 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:33:18.916 +01:00  WARN 18952 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:33:18.955 +01:00  WARN 18952 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:33:19.004 +01:00  WARN 18952 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:33:19.036 +01:00  WARN 18952 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:33:19.082 +01:00  WARN 18952 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:33:19.122 +01:00  WARN 18952 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:33:19.152 +01:00  WARN 18952 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:33:19.185 +01:00  WARN 18952 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:33:19.658 +01:00  WARN 18952 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:33:19.684 +01:00  WARN 18952 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:33:19.718 +01:00  WARN 18952 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:34:27.913 +01:00  WARN 18952 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:34:31.280 +01:00  WARN 18952 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:34:33.872 +01:00  WARN 18952 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:36:39.097 +01:00  WARN 18952 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:36:43.265 +01:00  WARN 18952 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:37:58.394 +01:00  WARN 18952 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:38:57.081 +01:00  WARN 18952 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:38:57.137 +01:00  WARN 18952 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:39:43.542 +01:00  WARN 18952 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:39:43.690 +01:00  WARN 18952 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 15:39:48.916 +01:00  WARN 18952 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 16:18:43.954 +01:00  WARN 18952 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 16:28:58.294 +01:00  WARN 18952 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 16:28:58.420 +01:00  WARN 18952 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 16:39:26.777 +01:00  WARN 18952 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 16:43:01.239 +01:00  WARN 18952 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 16:50:16.212 +01:00  WARN 18952 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 16:53:00.647 +01:00  WARN 18952 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 16:53:02.520 +01:00  WARN 18952 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 16:53:02.556 +01:00  WARN 18952 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 16:53:02.611 +01:00  WARN 18952 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 16:53:02.665 +01:00  WARN 18952 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 16:53:44.099 +01:00  WARN 18952 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 16:53:50.022 +01:00  WARN 18952 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 16:58:09.380 +01:00  WARN 18952 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 16:59:01.022 +01:00  WARN 18952 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 16:59:11.815 +01:00  WARN 18952 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 17:05:21.290 +01:00  WARN 18952 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+21-08-2023 18:40:19.991 +01:00 ERROR 18952 --- [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "uk.gigbookingapp.backend.entity.User.getAvatarPath()" because "user" is null] with root cause
 
-java.sql.SQLException: Operand should contain 1 column(s)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:483) ~[druid-1.2.18.jar:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58) ~[mybatis-3.5.13.jar:3.5.13]
-	at jdk.proxy3/jdk.proxy3.$Proxy94.execute(Unknown Source) ~[na:na]
-	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:333) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:90) ~[mybatis-3.5.13.jar:3.5.13]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49) ~[mybatis-3.5.13.jar:3.5.13]
-	at com.github.yulichang.interceptor.MPJInterceptor.intercept(MPJInterceptor.java:76) ~[mybatis-plus-join-core-1.4.5.jar:na]
-	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59) ~[mybatis-3.5.13.jar:3.5.13]
-	at jdk.proxy2/jdk.proxy2.$Proxy92.query(Unknown Source) ~[na:na]
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142) ~[mybatis-3.5.13.jar:3.5.13]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425) ~[mybatis-spring-3.0.2.jar:3.0.2]
-	at jdk.proxy2/jdk.proxy2.$Proxy65.selectList(Unknown Source) ~[na:na]
-	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224) ~[mybatis-spring-3.0.2.jar:3.0.2]
-	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:166) ~[mybatis-plus-core-3.5.3.1.jar:3.5.3.1]
-	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77) ~[mybatis-plus-core-3.5.3.1.jar:3.5.3.1]
-	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148) ~[mybatis-plus-core-3.5.3.1.jar:3.5.3.1]
-	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89) ~[mybatis-plus-core-3.5.3.1.jar:3.5.3.1]
-	at jdk.proxy2/jdk.proxy2.$Proxy77.selectJoinList(Unknown Source) ~[na:na]
-	at uk.gigbookingapp.backend.controller.CustomerController.getRec(CustomerController.java:192) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+java.lang.NullPointerException: Cannot invoke "uk.gigbookingapp.backend.entity.User.getAvatarPath()" because "user" is null
+	at uk.gigbookingapp.backend.controller.MainController.sendAvatar(MainController.java:42) ~[classes/:na]
+	at uk.gigbookingapp.backend.controller.PublicUserController.getAvatar(PublicUserController.java:51) ~[classes/:na]
+	at jdk.internal.reflect.GeneratedMethodAccessor63.invoke(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207) ~[spring-web-6.0.10.jar:6.0.10]
@@ -563,117 +414,12 @@ java.sql.SQLException: Operand should contain 1 column(s)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.10.jar:10.1.10]
 	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
 
-19-08-2023 19:39:30.221 +01:00  INFO 14000 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-19-08-2023 19:39:30.224 +01:00  INFO 14000 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-19-08-2023 19:39:33.638 +01:00  INFO 11496 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 11496 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
-19-08-2023 19:39:33.640 +01:00  INFO 11496 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
-19-08-2023 19:39:34.493 +01:00  INFO 11496 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-19-08-2023 19:39:34.500 +01:00  INFO 11496 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-19-08-2023 19:39:34.500 +01:00  INFO 11496 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-19-08-2023 19:39:34.565 +01:00  INFO 11496 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-19-08-2023 19:39:34.565 +01:00  INFO 11496 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 877 ms
-19-08-2023 19:39:34.710 +01:00  INFO 11496 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
-19-08-2023 19:39:35.519 +01:00  INFO 11496 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-19-08-2023 19:39:35.528 +01:00  INFO 11496 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.28 seconds (process running for 2.754)
-19-08-2023 19:39:37.427 +01:00  INFO 11496 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-19-08-2023 19:39:37.427 +01:00  INFO 11496 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-19-08-2023 19:39:37.428 +01:00  INFO 11496 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-19-08-2023 19:39:37.516 +01:00  INFO 11496 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-19-08-2023 19:40:17.812 +01:00  INFO 11496 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-19-08-2023 19:40:17.815 +01:00  INFO 11496 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-19-08-2023 19:40:21.131 +01:00  INFO 2328 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 2328 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
-19-08-2023 19:40:21.133 +01:00  INFO 2328 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
-19-08-2023 19:40:21.985 +01:00  INFO 2328 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-19-08-2023 19:40:21.991 +01:00  INFO 2328 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-19-08-2023 19:40:21.992 +01:00  INFO 2328 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-19-08-2023 19:40:22.055 +01:00  INFO 2328 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-19-08-2023 19:40:22.055 +01:00  INFO 2328 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 875 ms
-19-08-2023 19:40:22.198 +01:00  INFO 2328 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
-19-08-2023 19:40:22.944 +01:00  INFO 2328 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-19-08-2023 19:40:22.951 +01:00  INFO 2328 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.215 seconds (process running for 2.69)
-19-08-2023 20:05:29.362 +01:00  INFO 2328 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
-19-08-2023 20:20:29.128 +01:00  INFO 20208 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 20208 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
-19-08-2023 20:20:29.129 +01:00  INFO 20208 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
-19-08-2023 20:20:30.135 +01:00  INFO 20208 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-19-08-2023 20:20:30.142 +01:00  INFO 20208 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-19-08-2023 20:20:30.142 +01:00  INFO 20208 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-19-08-2023 20:20:30.219 +01:00  INFO 20208 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-19-08-2023 20:20:30.219 +01:00  INFO 20208 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1032 ms
-19-08-2023 20:20:30.410 +01:00  INFO 20208 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
-19-08-2023 20:20:31.342 +01:00  INFO 20208 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-19-08-2023 20:20:31.352 +01:00  INFO 20208 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.661 seconds (process running for 3.247)
-19-08-2023 20:20:41.897 +01:00  INFO 20208 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-19-08-2023 20:20:41.897 +01:00  INFO 20208 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-19-08-2023 20:20:41.898 +01:00  INFO 20208 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-19-08-2023 20:20:42.002 +01:00  INFO 20208 --- [http-nio-8080-exec-2] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-19-08-2023 20:22:44.880 +01:00  INFO 20208 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-19-08-2023 20:22:44.884 +01:00  INFO 20208 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-19-08-2023 20:22:48.512 +01:00  INFO 3984 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 3984 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
-19-08-2023 20:22:48.513 +01:00  INFO 3984 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
-19-08-2023 20:22:49.428 +01:00  INFO 3984 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-19-08-2023 20:22:49.434 +01:00  INFO 3984 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-19-08-2023 20:22:49.434 +01:00  INFO 3984 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-19-08-2023 20:22:49.501 +01:00  INFO 3984 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-19-08-2023 20:22:49.501 +01:00  INFO 3984 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 944 ms
-19-08-2023 20:22:49.651 +01:00  INFO 3984 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
-19-08-2023 20:22:50.419 +01:00  INFO 3984 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-19-08-2023 20:22:50.427 +01:00  INFO 3984 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.324 seconds (process running for 2.814)
-19-08-2023 20:22:54.703 +01:00  INFO 3984 --- [http-nio-8080-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-19-08-2023 20:22:54.703 +01:00  INFO 3984 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-19-08-2023 20:22:54.704 +01:00  INFO 3984 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-19-08-2023 20:22:54.788 +01:00  INFO 3984 --- [http-nio-8080-exec-4] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-19-08-2023 20:22:55.189 +01:00 ERROR 3984 --- [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'service_id' in 'where clause'
-### The error may exist in uk/gigbookingapp/backend/mapper/ServiceMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT    id,title,description,fee,provider_id,timestamp,tag    FROM   service        WHERE (service_id <> ? AND service_id <> ? AND service_id <> ? AND service_id <> ? AND service_id <> ?) limit 5
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'service_id' in 'where clause'
-; bad SQL grammar []] with root cause
+21-08-2023 18:40:23.154 +01:00 ERROR 18952 --- [http-nio-8080-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "uk.gigbookingapp.backend.entity.User.getAvatarPath()" because "user" is null] with root cause
 
-java.sql.SQLSyntaxErrorException: Unknown column 'service_id' in 'where clause'
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:483) ~[druid-1.2.18.jar:na]
-	at jdk.internal.reflect.GeneratedMethodAccessor13.invoke(Unknown Source) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58) ~[mybatis-3.5.13.jar:3.5.13]
-	at jdk.proxy3/jdk.proxy3.$Proxy94.execute(Unknown Source) ~[na:na]
-	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:333) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:90) ~[mybatis-3.5.13.jar:3.5.13]
-	at jdk.internal.reflect.GeneratedMethodAccessor10.invoke(Unknown Source) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49) ~[mybatis-3.5.13.jar:3.5.13]
-	at com.github.yulichang.interceptor.MPJInterceptor.intercept(MPJInterceptor.java:76) ~[mybatis-plus-join-core-1.4.5.jar:na]
-	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59) ~[mybatis-3.5.13.jar:3.5.13]
-	at jdk.proxy2/jdk.proxy2.$Proxy92.query(Unknown Source) ~[na:na]
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147) ~[mybatis-3.5.13.jar:3.5.13]
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142) ~[mybatis-3.5.13.jar:3.5.13]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425) ~[mybatis-spring-3.0.2.jar:3.0.2]
-	at jdk.proxy2/jdk.proxy2.$Proxy65.selectList(Unknown Source) ~[na:na]
-	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224) ~[mybatis-spring-3.0.2.jar:3.0.2]
-	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:166) ~[mybatis-plus-core-3.5.3.1.jar:3.5.3.1]
-	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77) ~[mybatis-plus-core-3.5.3.1.jar:3.5.3.1]
-	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148) ~[mybatis-plus-core-3.5.3.1.jar:3.5.3.1]
-	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89) ~[mybatis-plus-core-3.5.3.1.jar:3.5.3.1]
-	at jdk.proxy2/jdk.proxy2.$Proxy76.selectList(Unknown Source) ~[na:na]
-	at uk.gigbookingapp.backend.controller.CustomerController.getRec(CustomerController.java:204) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+java.lang.NullPointerException: Cannot invoke "uk.gigbookingapp.backend.entity.User.getAvatarPath()" because "user" is null
+	at uk.gigbookingapp.backend.controller.MainController.sendAvatar(MainController.java:42) ~[classes/:na]
+	at uk.gigbookingapp.backend.controller.PublicUserController.getAvatar(PublicUserController.java:51) ~[classes/:na]
+	at jdk.internal.reflect.GeneratedMethodAccessor63.invoke(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207) ~[spring-web-6.0.10.jar:6.0.10]
@@ -723,85 +469,76 @@ java.sql.SQLSyntaxErrorException: Unknown column 'service_id' in 'where clause'
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.10.jar:10.1.10]
 	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
 
-19-08-2023 20:25:51.697 +01:00  INFO 3984 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-19-08-2023 20:25:51.699 +01:00  INFO 3984 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-19-08-2023 20:25:55.045 +01:00  INFO 17484 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 17484 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
-19-08-2023 20:25:55.047 +01:00  INFO 17484 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
-19-08-2023 20:25:55.919 +01:00  INFO 17484 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-19-08-2023 20:25:55.925 +01:00  INFO 17484 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-19-08-2023 20:25:55.925 +01:00  INFO 17484 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-19-08-2023 20:25:55.991 +01:00  INFO 17484 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-19-08-2023 20:25:55.991 +01:00  INFO 17484 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 897 ms
-19-08-2023 20:25:56.142 +01:00  INFO 17484 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
-19-08-2023 20:25:56.903 +01:00  INFO 17484 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-19-08-2023 20:25:56.910 +01:00  INFO 17484 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.26 seconds (process running for 2.73)
-19-08-2023 20:26:01.533 +01:00  INFO 17484 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-19-08-2023 20:26:01.533 +01:00  INFO 17484 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-19-08-2023 20:26:01.535 +01:00  INFO 17484 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-19-08-2023 20:26:01.615 +01:00  INFO 17484 --- [http-nio-8080-exec-2] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-19-08-2023 20:26:31.856 +01:00  INFO 17484 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-19-08-2023 20:26:31.859 +01:00  INFO 17484 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-19-08-2023 21:05:41.759 +01:00  INFO 23516 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 23516 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
-19-08-2023 21:05:41.760 +01:00  INFO 23516 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
-19-08-2023 21:05:42.826 +01:00  INFO 23516 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-19-08-2023 21:05:42.835 +01:00  INFO 23516 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-19-08-2023 21:05:42.835 +01:00  INFO 23516 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-19-08-2023 21:05:42.925 +01:00  INFO 23516 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-19-08-2023 21:05:42.925 +01:00  INFO 23516 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1118 ms
-19-08-2023 21:05:43.133 +01:00  INFO 23516 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
-19-08-2023 21:05:44.036 +01:00  INFO 23516 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-19-08-2023 21:05:44.045 +01:00  INFO 23516 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.717 seconds (process running for 3.39)
-19-08-2023 21:05:49.578 +01:00  INFO 23516 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-19-08-2023 21:05:49.579 +01:00  INFO 23516 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-19-08-2023 21:05:49.580 +01:00  INFO 23516 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-19-08-2023 21:05:49.706 +01:00  INFO 23516 --- [http-nio-8080-exec-3] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-19-08-2023 21:41:05.593 +01:00  INFO 23516 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-19-08-2023 21:41:05.610 +01:00  INFO 23516 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-19-08-2023 22:00:58.524 +01:00  INFO 2852 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 2852 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
-19-08-2023 22:00:58.526 +01:00  INFO 2852 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
-19-08-2023 22:00:59.480 +01:00  INFO 2852 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-19-08-2023 22:00:59.488 +01:00  INFO 2852 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-19-08-2023 22:00:59.488 +01:00  INFO 2852 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-19-08-2023 22:00:59.560 +01:00  INFO 2852 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-19-08-2023 22:00:59.560 +01:00  INFO 2852 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 979 ms
-19-08-2023 22:00:59.740 +01:00  INFO 2852 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
-19-08-2023 22:01:00.614 +01:00  INFO 2852 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-19-08-2023 22:01:00.622 +01:00  INFO 2852 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.539 seconds (process running for 3.085)
-19-08-2023 22:01:37.259 +01:00  INFO 2852 --- [http-nio-8080-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-19-08-2023 22:01:37.259 +01:00  INFO 2852 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-19-08-2023 22:01:37.260 +01:00  INFO 2852 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-19-08-2023 22:01:37.382 +01:00  INFO 2852 --- [http-nio-8080-exec-4] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-19-08-2023 22:05:46.232 +01:00  INFO 2852 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-19-08-2023 22:05:46.236 +01:00  INFO 2852 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-19-08-2023 22:05:49.823 +01:00  INFO 9020 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 9020 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
-19-08-2023 22:05:49.825 +01:00  INFO 9020 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
-19-08-2023 22:05:50.744 +01:00  INFO 9020 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-19-08-2023 22:05:50.753 +01:00  INFO 9020 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-19-08-2023 22:05:50.753 +01:00  INFO 9020 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-19-08-2023 22:05:50.818 +01:00  INFO 9020 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-19-08-2023 22:05:50.819 +01:00  INFO 9020 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 944 ms
-19-08-2023 22:05:51.040 +01:00  INFO 9020 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
-19-08-2023 22:05:51.901 +01:00  INFO 9020 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-19-08-2023 22:05:51.908 +01:00  INFO 9020 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.488 seconds (process running for 3.0)
-19-08-2023 22:05:52.816 +01:00  INFO 9020 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-19-08-2023 22:05:52.816 +01:00  INFO 9020 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-19-08-2023 22:05:52.817 +01:00  INFO 9020 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-19-08-2023 22:05:52.899 +01:00  INFO 9020 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-19-08-2023 22:07:17.755 +01:00  INFO 9020 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-19-08-2023 22:07:17.758 +01:00  INFO 9020 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-19-08-2023 22:07:21.238 +01:00  INFO 23448 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 23448 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
-19-08-2023 22:07:21.240 +01:00  INFO 23448 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
-19-08-2023 22:07:22.119 +01:00  INFO 23448 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-19-08-2023 22:07:22.126 +01:00  INFO 23448 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-19-08-2023 22:07:22.126 +01:00  INFO 23448 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-19-08-2023 22:07:22.191 +01:00  INFO 23448 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-19-08-2023 22:07:22.191 +01:00  INFO 23448 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 906 ms
-19-08-2023 22:07:22.339 +01:00  INFO 23448 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
-19-08-2023 22:07:23.137 +01:00  INFO 23448 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-19-08-2023 22:07:23.146 +01:00  INFO 23448 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.319 seconds (process running for 2.806)
-19-08-2023 22:07:25.934 +01:00  INFO 23448 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-19-08-2023 22:07:25.934 +01:00  INFO 23448 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-19-08-2023 22:07:25.935 +01:00  INFO 23448 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-19-08-2023 22:07:26.024 +01:00  INFO 23448 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-19-08-2023 22:07:35.274 +01:00  INFO 23448 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-19-08-2023 22:07:35.277 +01:00  INFO 23448 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+21-08-2023 18:40:27.437 +01:00 ERROR 18952 --- [http-nio-8080-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "uk.gigbookingapp.backend.entity.User.getAvatarPath()" because "user" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "uk.gigbookingapp.backend.entity.User.getAvatarPath()" because "user" is null
+	at uk.gigbookingapp.backend.controller.MainController.sendAvatar(MainController.java:42) ~[classes/:na]
+	at uk.gigbookingapp.backend.controller.PublicUserController.getAvatar(PublicUserController.java:51) ~[classes/:na]
+	at jdk.internal.reflect.GeneratedMethodAccessor63.invoke(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207) ~[spring-web-6.0.10.jar:6.0.10]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152) ~[spring-web-6.0.10.jar:6.0.10]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.0.10.jar:6.0.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884) ~[spring-webmvc-6.0.10.jar:6.0.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797) ~[spring-webmvc-6.0.10.jar:6.0.10]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.0.10.jar:6.0.10]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081) ~[spring-webmvc-6.0.10.jar:6.0.10]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974) ~[spring-webmvc-6.0.10.jar:6.0.10]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011) ~[spring-webmvc-6.0.10.jar:6.0.10]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.0.10.jar:6.0.10]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.10.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.0.10.jar:6.0.10]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.10.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.10.jar:10.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.10.jar:10.1.10]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.10.jar:10.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.10.jar:10.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.10.jar:10.1.10]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.0.10.jar:6.0.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.10.jar:6.0.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.10.jar:10.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.10.jar:10.1.10]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.0.10.jar:6.0.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.10.jar:6.0.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.10.jar:10.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.10.jar:10.1.10]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.0.10.jar:6.0.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.10.jar:6.0.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.10.jar:10.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.10.jar:10.1.10]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166) ~[tomcat-embed-core-10.1.10.jar:10.1.10]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.10.jar:10.1.10]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.10.jar:10.1.10]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.10.jar:10.1.10]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.10.jar:10.1.10]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.10.jar:10.1.10]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341) ~[tomcat-embed-core-10.1.10.jar:10.1.10]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.10.jar:10.1.10]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.10.jar:10.1.10]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894) ~[tomcat-embed-core-10.1.10.jar:10.1.10]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.10.jar:10.1.10]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.10.jar:10.1.10]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.10.jar:10.1.10]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.10.jar:10.1.10]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.10.jar:10.1.10]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+21-08-2023 18:55:08.254 +01:00  INFO 18952 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+21-08-2023 18:55:08.265 +01:00  INFO 18952 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+21-08-2023 18:55:14.368 +01:00  INFO 11328 --- [main] u.g.backend.GigBookingAppApplication     : Starting GigBookingAppApplication using Java 17.0.6 with PID 11328 (E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp\target\classes started by DELL in E:\Coursworks in Bristol\Java_workspace\gitRepo\GigBookingApp)
+21-08-2023 18:55:14.376 +01:00  INFO 11328 --- [main] u.g.backend.GigBookingAppApplication     : No active profile set, falling back to 1 default profile: "default"
+21-08-2023 18:55:15.479 +01:00  INFO 11328 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+21-08-2023 18:55:15.487 +01:00  INFO 11328 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+21-08-2023 18:55:15.487 +01:00  INFO 11328 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+21-08-2023 18:55:15.559 +01:00  INFO 11328 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+21-08-2023 18:55:15.560 +01:00  INFO 11328 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1133 ms
+21-08-2023 18:55:15.753 +01:00  INFO 11328 --- [main] c.g.y.a.MybatisPlusJoinAutoConfiguration : MPJSqlInjector init
+21-08-2023 18:55:16.658 +01:00  INFO 11328 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+21-08-2023 18:55:16.667 +01:00  INFO 11328 --- [main] u.g.backend.GigBookingAppApplication     : Started GigBookingAppApplication in 2.738 seconds (process running for 3.327)
+21-08-2023 18:55:32.407 +01:00  INFO 11328 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+21-08-2023 18:55:32.407 +01:00  INFO 11328 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+21-08-2023 18:55:32.408 +01:00  INFO 11328 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+21-08-2023 18:55:32.519 +01:00  INFO 11328 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+21-08-2023 19:39:26.097 +01:00  INFO 11328 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+21-08-2023 19:39:26.117 +01:00  INFO 11328 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
